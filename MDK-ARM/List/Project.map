@@ -1,0 +1,1901 @@
+ARM Linker, 5.03 [Build 76] [MDK-ARM Standard]
+
+==============================================================================
+
+Section Cross References
+
+    main.o(i.App_TaskStart) refers to os_cpu_c.o(i.OS_CPU_SysTickInit) for OS_CPU_SysTickInit
+    main.o(i.App_TaskStart) refers to os_core.o(i.OSStatInit) for OSStatInit
+    main.o(i.App_TaskStart) refers to os_time.o(i.OSTimeDlyHMSM) for OSTimeDlyHMSM
+    main.o(i.main) refers to cpu_a.o(.text) for CPU_IntDis
+    main.o(i.main) refers to os_core.o(i.OSInit) for OSInit
+    main.o(i.main) refers to os_task.o(i.OSTaskCreateExt) for OSTaskCreateExt
+    main.o(i.main) refers to os_task.o(i.OSTaskNameSet) for OSTaskNameSet
+    main.o(i.main) refers to os_core.o(i.OSStart) for OSStart
+    main.o(i.main) refers to main.o(.bss) for .bss
+    main.o(i.main) refers to main.o(i.App_TaskStart) for App_TaskStart
+    stm32f10x_it.o(i.SysTick_Handler) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    stm32f10x_it.o(i.SysTick_Handler) refers to os_core.o(i.OSTimeTick) for OSTimeTick
+    stm32f10x_it.o(i.SysTick_Handler) refers to os_core.o(i.OSIntExit) for OSIntExit
+    stm32f10x_it.o(i.SysTick_Handler) refers to os_core.o(.data) for OSIntNesting
+    hzlib.o(i.GetGBKCode) refers to memcpya.o(.text) for __aeabi_memcpy
+    hzlib.o(i.GetGBKCode) refers to hzlib.o(.constdata) for .constdata
+    asciilib.o(i.GetASCIICode) refers to memcpya.o(.text) for __aeabi_memcpy
+    asciilib.o(i.GetASCIICode) refers to asciilib.o(.constdata) for .constdata
+    glcd.o(i.GUI_Chinese) refers to glcd.o(i.PutChinese) for PutChinese
+    glcd.o(i.GUI_Text) refers to glcd.o(i.PutChar) for PutChar
+    glcd.o(i.LCD_Clear) refers to glcd.o(i.LCD_SetCursor) for LCD_SetCursor
+    glcd.o(i.LCD_Clear) refers to glcd.o(i.LCD_WriteIndex) for LCD_WriteIndex
+    glcd.o(i.LCD_Clear) refers to glcd.o(i.LCD_WriteData) for LCD_WriteData
+    glcd.o(i.LCD_Clear) refers to glcd.o(i.LCD_WriteReg) for LCD_WriteReg
+    glcd.o(i.LCD_Clear) refers to glcd.o(.data) for .data
+    glcd.o(i.LCD_DrawLine) refers to glcd.o(i.LCD_SetPoint) for LCD_SetPoint
+    glcd.o(i.LCD_GetPoint) refers to glcd.o(i.LCD_SetCursor) for LCD_SetCursor
+    glcd.o(i.LCD_GetPoint) refers to glcd.o(i.LCD_WriteIndex) for LCD_WriteIndex
+    glcd.o(i.LCD_GetPoint) refers to glcd.o(i.LCD_ReadData) for LCD_ReadData
+    glcd.o(i.LCD_GetPoint) refers to glcd.o(.data) for .data
+    glcd.o(i.LCD_Initializtion) refers to stm32f10x_rcc.o(i.RCC_APB2PeriphClockCmd) for RCC_APB2PeriphClockCmd
+    glcd.o(i.LCD_Initializtion) refers to stm32f10x_gpio.o(i.GPIO_Init) for GPIO_Init
+    glcd.o(i.LCD_Initializtion) refers to glcd.o(i.LCD_ReadReg) for LCD_ReadReg
+    glcd.o(i.LCD_Initializtion) refers to glcd.o(i.LCD_WriteReg) for LCD_WriteReg
+    glcd.o(i.LCD_Initializtion) refers to glcd.o(i.delay_ms) for delay_ms
+    glcd.o(i.LCD_Initializtion) refers to glcd.o(.data) for .data
+    glcd.o(i.LCD_SetCursor) refers to glcd.o(i.LCD_WriteReg) for LCD_WriteReg
+    glcd.o(i.LCD_SetCursor) refers to glcd.o(.data) for .data
+    glcd.o(i.LCD_SetPoint) refers to glcd.o(i.LCD_SetCursor) for LCD_SetCursor
+    glcd.o(i.LCD_SetPoint) refers to glcd.o(i.LCD_WriteReg) for LCD_WriteReg
+    glcd.o(i.PutChar) refers to asciilib.o(i.GetASCIICode) for GetASCIICode
+    glcd.o(i.PutChar) refers to glcd.o(i.LCD_SetPoint) for LCD_SetPoint
+    glcd.o(i.PutChinese) refers to hzlib.o(i.GetGBKCode) for GetGBKCode
+    glcd.o(i.PutChinese) refers to glcd.o(i.LCD_SetPoint) for LCD_SetPoint
+    stm32f10x_flash.o(i.FLASH_EnableWriteProtection) refers to stm32f10x_flash.o(i.FLASH_WaitForLastOperation) for FLASH_WaitForLastOperation
+    stm32f10x_flash.o(i.FLASH_EraseAllBank1Pages) refers to stm32f10x_flash.o(i.FLASH_WaitForLastBank1Operation) for FLASH_WaitForLastBank1Operation
+    stm32f10x_flash.o(i.FLASH_EraseAllPages) refers to stm32f10x_flash.o(i.FLASH_WaitForLastOperation) for FLASH_WaitForLastOperation
+    stm32f10x_flash.o(i.FLASH_EraseOptionBytes) refers to stm32f10x_flash.o(i.FLASH_GetReadOutProtectionStatus) for FLASH_GetReadOutProtectionStatus
+    stm32f10x_flash.o(i.FLASH_EraseOptionBytes) refers to stm32f10x_flash.o(i.FLASH_WaitForLastOperation) for FLASH_WaitForLastOperation
+    stm32f10x_flash.o(i.FLASH_ErasePage) refers to stm32f10x_flash.o(i.FLASH_WaitForLastOperation) for FLASH_WaitForLastOperation
+    stm32f10x_flash.o(i.FLASH_ProgramHalfWord) refers to stm32f10x_flash.o(i.FLASH_WaitForLastOperation) for FLASH_WaitForLastOperation
+    stm32f10x_flash.o(i.FLASH_ProgramOptionByteData) refers to stm32f10x_flash.o(i.FLASH_WaitForLastOperation) for FLASH_WaitForLastOperation
+    stm32f10x_flash.o(i.FLASH_ProgramWord) refers to stm32f10x_flash.o(i.FLASH_WaitForLastOperation) for FLASH_WaitForLastOperation
+    stm32f10x_flash.o(i.FLASH_ReadOutProtection) refers to stm32f10x_flash.o(i.FLASH_WaitForLastOperation) for FLASH_WaitForLastOperation
+    stm32f10x_flash.o(i.FLASH_UserOptionByteConfig) refers to stm32f10x_flash.o(i.FLASH_WaitForLastOperation) for FLASH_WaitForLastOperation
+    stm32f10x_flash.o(i.FLASH_WaitForLastBank1Operation) refers to stm32f10x_flash.o(i.FLASH_GetBank1Status) for FLASH_GetBank1Status
+    stm32f10x_flash.o(i.FLASH_WaitForLastOperation) refers to stm32f10x_flash.o(i.FLASH_GetBank1Status) for FLASH_GetBank1Status
+    stm32f10x_gpio.o(i.GPIO_AFIODeInit) refers to stm32f10x_rcc.o(i.RCC_APB2PeriphResetCmd) for RCC_APB2PeriphResetCmd
+    stm32f10x_gpio.o(i.GPIO_DeInit) refers to stm32f10x_rcc.o(i.RCC_APB2PeriphResetCmd) for RCC_APB2PeriphResetCmd
+    stm32f10x_rcc.o(i.RCC_GetClocksFreq) refers to stm32f10x_rcc.o(.data) for .data
+    stm32f10x_rcc.o(i.RCC_WaitForHSEStartUp) refers to stm32f10x_rcc.o(i.RCC_GetFlagStatus) for RCC_GetFlagStatus
+    stm32f10x_adc.o(i.ADC_DeInit) refers to stm32f10x_rcc.o(i.RCC_APB2PeriphResetCmd) for RCC_APB2PeriphResetCmd
+    stm32f10x_bkp.o(i.BKP_DeInit) refers to stm32f10x_rcc.o(i.RCC_BackupResetCmd) for RCC_BackupResetCmd
+    stm32f10x_can.o(i.CAN_DeInit) refers to stm32f10x_rcc.o(i.RCC_APB1PeriphResetCmd) for RCC_APB1PeriphResetCmd
+    stm32f10x_can.o(i.CAN_GetITStatus) refers to stm32f10x_can.o(i.CheckITStatus) for CheckITStatus
+    stm32f10x_can.o(i.CAN_Receive) refers to stm32f10x_can.o(i.CAN_FIFORelease) for CAN_FIFORelease
+    stm32f10x_cec.o(i.CEC_DeInit) refers to stm32f10x_rcc.o(i.RCC_APB1PeriphResetCmd) for RCC_APB1PeriphResetCmd
+    stm32f10x_dac.o(i.DAC_DeInit) refers to stm32f10x_rcc.o(i.RCC_APB1PeriphResetCmd) for RCC_APB1PeriphResetCmd
+    stm32f10x_i2c.o(i.I2C_DeInit) refers to stm32f10x_rcc.o(i.RCC_APB1PeriphResetCmd) for RCC_APB1PeriphResetCmd
+    stm32f10x_i2c.o(i.I2C_Init) refers to stm32f10x_rcc.o(i.RCC_GetClocksFreq) for RCC_GetClocksFreq
+    stm32f10x_pwr.o(i.PWR_DeInit) refers to stm32f10x_rcc.o(i.RCC_APB1PeriphResetCmd) for RCC_APB1PeriphResetCmd
+    stm32f10x_rtc.o(i.RTC_SetAlarm) refers to stm32f10x_rtc.o(i.RTC_EnterConfigMode) for RTC_EnterConfigMode
+    stm32f10x_rtc.o(i.RTC_SetAlarm) refers to stm32f10x_rtc.o(i.RTC_ExitConfigMode) for RTC_ExitConfigMode
+    stm32f10x_rtc.o(i.RTC_SetCounter) refers to stm32f10x_rtc.o(i.RTC_EnterConfigMode) for RTC_EnterConfigMode
+    stm32f10x_rtc.o(i.RTC_SetCounter) refers to stm32f10x_rtc.o(i.RTC_ExitConfigMode) for RTC_ExitConfigMode
+    stm32f10x_rtc.o(i.RTC_SetPrescaler) refers to stm32f10x_rtc.o(i.RTC_EnterConfigMode) for RTC_EnterConfigMode
+    stm32f10x_rtc.o(i.RTC_SetPrescaler) refers to stm32f10x_rtc.o(i.RTC_ExitConfigMode) for RTC_ExitConfigMode
+    stm32f10x_spi.o(i.I2S_Init) refers to stm32f10x_rcc.o(i.RCC_GetClocksFreq) for RCC_GetClocksFreq
+    stm32f10x_spi.o(i.SPI_I2S_DeInit) refers to stm32f10x_rcc.o(i.RCC_APB2PeriphResetCmd) for RCC_APB2PeriphResetCmd
+    stm32f10x_spi.o(i.SPI_I2S_DeInit) refers to stm32f10x_rcc.o(i.RCC_APB1PeriphResetCmd) for RCC_APB1PeriphResetCmd
+    stm32f10x_tim.o(i.TIM_DeInit) refers to stm32f10x_rcc.o(i.RCC_APB1PeriphResetCmd) for RCC_APB1PeriphResetCmd
+    stm32f10x_tim.o(i.TIM_DeInit) refers to stm32f10x_rcc.o(i.RCC_APB2PeriphResetCmd) for RCC_APB2PeriphResetCmd
+    stm32f10x_tim.o(i.TIM_ETRClockMode1Config) refers to stm32f10x_tim.o(i.TIM_ETRConfig) for TIM_ETRConfig
+    stm32f10x_tim.o(i.TIM_ETRClockMode2Config) refers to stm32f10x_tim.o(i.TIM_ETRConfig) for TIM_ETRConfig
+    stm32f10x_tim.o(i.TIM_ICInit) refers to stm32f10x_tim.o(i.TI1_Config) for TI1_Config
+    stm32f10x_tim.o(i.TIM_ICInit) refers to stm32f10x_tim.o(i.TIM_SetIC1Prescaler) for TIM_SetIC1Prescaler
+    stm32f10x_tim.o(i.TIM_ICInit) refers to stm32f10x_tim.o(i.TI2_Config) for TI2_Config
+    stm32f10x_tim.o(i.TIM_ICInit) refers to stm32f10x_tim.o(i.TIM_SetIC2Prescaler) for TIM_SetIC2Prescaler
+    stm32f10x_tim.o(i.TIM_ICInit) refers to stm32f10x_tim.o(i.TIM_SetIC3Prescaler) for TIM_SetIC3Prescaler
+    stm32f10x_tim.o(i.TIM_ICInit) refers to stm32f10x_tim.o(i.TIM_SetIC4Prescaler) for TIM_SetIC4Prescaler
+    stm32f10x_tim.o(i.TIM_PWMIConfig) refers to stm32f10x_tim.o(i.TI2_Config) for TI2_Config
+    stm32f10x_tim.o(i.TIM_PWMIConfig) refers to stm32f10x_tim.o(i.TIM_SetIC2Prescaler) for TIM_SetIC2Prescaler
+    stm32f10x_tim.o(i.TIM_PWMIConfig) refers to stm32f10x_tim.o(i.TI1_Config) for TI1_Config
+    stm32f10x_tim.o(i.TIM_PWMIConfig) refers to stm32f10x_tim.o(i.TIM_SetIC1Prescaler) for TIM_SetIC1Prescaler
+    stm32f10x_tim.o(i.TIM_TIxExternalClockConfig) refers to stm32f10x_tim.o(i.TI1_Config) for TI1_Config
+    stm32f10x_tim.o(i.TIM_TIxExternalClockConfig) refers to stm32f10x_tim.o(i.TI2_Config) for TI2_Config
+    stm32f10x_usart.o(i.USART_DeInit) refers to stm32f10x_rcc.o(i.RCC_APB2PeriphResetCmd) for RCC_APB2PeriphResetCmd
+    stm32f10x_usart.o(i.USART_DeInit) refers to stm32f10x_rcc.o(i.RCC_APB1PeriphResetCmd) for RCC_APB1PeriphResetCmd
+    stm32f10x_usart.o(i.USART_Init) refers to stm32f10x_rcc.o(i.RCC_GetClocksFreq) for RCC_GetClocksFreq
+    stm32f10x_wwdg.o(i.WWDG_DeInit) refers to stm32f10x_rcc.o(i.RCC_APB1PeriphResetCmd) for RCC_APB1PeriphResetCmd
+    stm32_eth.o(i.ETH_DMAPTPRxDescChainInit) refers to stm32_eth.o(.data) for .data
+    stm32_eth.o(i.ETH_DMAPTPTxDescChainInit) refers to stm32_eth.o(.data) for .data
+    stm32_eth.o(i.ETH_DMARxDescChainInit) refers to stm32_eth.o(.data) for .data
+    stm32_eth.o(i.ETH_DMARxDescRingInit) refers to stm32_eth.o(.data) for .data
+    stm32_eth.o(i.ETH_DMATxDescChainInit) refers to stm32_eth.o(.data) for .data
+    stm32_eth.o(i.ETH_DMATxDescRingInit) refers to stm32_eth.o(.data) for .data
+    stm32_eth.o(i.ETH_DeInit) refers to stm32f10x_rcc.o(i.RCC_AHBPeriphResetCmd) for RCC_AHBPeriphResetCmd
+    stm32_eth.o(i.ETH_DropRxPkt) refers to stm32_eth.o(.data) for .data
+    stm32_eth.o(i.ETH_GetRxPktSize) refers to stm32_eth.o(.data) for .data
+    stm32_eth.o(i.ETH_HandlePTPRxPkt) refers to stm32_eth.o(.data) for .data
+    stm32_eth.o(i.ETH_HandlePTPTxPkt) refers to stm32_eth.o(.data) for .data
+    stm32_eth.o(i.ETH_HandleRxPkt) refers to stm32_eth.o(.data) for .data
+    stm32_eth.o(i.ETH_HandleTxPkt) refers to stm32_eth.o(.data) for .data
+    stm32_eth.o(i.ETH_Init) refers to stm32f10x_rcc.o(i.RCC_GetClocksFreq) for RCC_GetClocksFreq
+    stm32_eth.o(i.ETH_Init) refers to stm32_eth.o(i.ETH_WritePHYRegister) for ETH_WritePHYRegister
+    stm32_eth.o(i.ETH_Init) refers to stm32_eth.o(i.ETH_Delay) for ETH_Delay
+    stm32_eth.o(i.ETH_Init) refers to stm32_eth.o(i.ETH_ReadPHYRegister) for ETH_ReadPHYRegister
+    stm32_eth.o(i.ETH_PHYLoopBackCmd) refers to stm32_eth.o(i.ETH_ReadPHYRegister) for ETH_ReadPHYRegister
+    stm32_eth.o(i.ETH_PHYLoopBackCmd) refers to stm32_eth.o(i.ETH_WritePHYRegister) for ETH_WritePHYRegister
+    stm32_eth.o(i.ETH_Start) refers to stm32_eth.o(i.ETH_MACTransmissionCmd) for ETH_MACTransmissionCmd
+    stm32_eth.o(i.ETH_Start) refers to stm32_eth.o(i.ETH_FlushTransmitFIFO) for ETH_FlushTransmitFIFO
+    stm32_eth.o(i.ETH_Start) refers to stm32_eth.o(i.ETH_MACReceptionCmd) for ETH_MACReceptionCmd
+    stm32_eth.o(i.ETH_Start) refers to stm32_eth.o(i.ETH_DMATransmissionCmd) for ETH_DMATransmissionCmd
+    stm32_eth.o(i.ETH_Start) refers to stm32_eth.o(i.ETH_DMAReceptionCmd) for ETH_DMAReceptionCmd
+    system_stm32f10x.o(i.SystemCoreClockUpdate) refers to system_stm32f10x.o(.data) for .data
+    system_stm32f10x.o(i.SystemInit) refers to system_stm32f10x.o(i.SetSysClockTo72) for SetSysClockTo72
+    startup_stm32f10x_cl.o(RESET) refers to startup_stm32f10x_cl.o(STACK) for __initial_sp
+    startup_stm32f10x_cl.o(RESET) refers to startup_stm32f10x_cl.o(.text) for Reset_Handler
+    startup_stm32f10x_cl.o(RESET) refers to stm32f10x_it.o(i.NMI_Handler) for NMI_Handler
+    startup_stm32f10x_cl.o(RESET) refers to stm32f10x_it.o(i.HardFault_Handler) for HardFault_Handler
+    startup_stm32f10x_cl.o(RESET) refers to stm32f10x_it.o(i.MemManage_Handler) for MemManage_Handler
+    startup_stm32f10x_cl.o(RESET) refers to stm32f10x_it.o(i.BusFault_Handler) for BusFault_Handler
+    startup_stm32f10x_cl.o(RESET) refers to stm32f10x_it.o(i.UsageFault_Handler) for UsageFault_Handler
+    startup_stm32f10x_cl.o(RESET) refers to stm32f10x_it.o(i.SVC_Handler) for SVC_Handler
+    startup_stm32f10x_cl.o(RESET) refers to stm32f10x_it.o(i.DebugMon_Handler) for DebugMon_Handler
+    startup_stm32f10x_cl.o(RESET) refers to os_cpu_a.o(.text) for PendSV_Handler
+    startup_stm32f10x_cl.o(RESET) refers to stm32f10x_it.o(i.SysTick_Handler) for SysTick_Handler
+    startup_stm32f10x_cl.o(RESET) refers to stm32f10x_it.o(i.USART1_IRQHandler) for USART1_IRQHandler
+    startup_stm32f10x_cl.o(.text) refers to system_stm32f10x.o(i.SystemInit) for SystemInit
+    startup_stm32f10x_cl.o(.text) refers to entry.o(.ARM.Collect$$$$00000000) for __main
+    os_cpu_c.o(i.OSInitHookBegin) refers to os_cpu_c.o(.data) for .data
+    os_cpu_c.o(i.OSTCBInitHook) refers to os_apphooks.o(i.App_TCBInitHook) for App_TCBInitHook
+    os_cpu_c.o(i.OSTaskCreateHook) refers to os_apphooks.o(i.App_TaskCreateHook) for App_TaskCreateHook
+    os_cpu_c.o(i.OSTaskDelHook) refers to os_apphooks.o(i.App_TaskDelHook) for App_TaskDelHook
+    os_cpu_c.o(i.OSTaskIdleHook) refers to os_apphooks.o(i.App_TaskIdleHook) for App_TaskIdleHook
+    os_cpu_c.o(i.OSTaskStatHook) refers to os_apphooks.o(i.App_TaskStatHook) for App_TaskStatHook
+    os_cpu_c.o(i.OSTaskSwHook) refers to os_apphooks.o(i.App_TaskSwHook) for App_TaskSwHook
+    os_cpu_c.o(i.OSTimeTickHook) refers to os_apphooks.o(i.App_TimeTickHook) for App_TimeTickHook
+    os_cpu_c.o(i.OSTimeTickHook) refers to os_tmr.o(i.OSTmrSignal) for OSTmrSignal
+    os_cpu_c.o(i.OSTimeTickHook) refers to os_cpu_c.o(.data) for .data
+    os_cpu_c.o(i.OS_CPU_SysTickClkFreq) refers to stm32f10x_rcc.o(i.RCC_GetClocksFreq) for RCC_GetClocksFreq
+    os_cpu_c.o(i.OS_CPU_SysTickHandler) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_cpu_c.o(i.OS_CPU_SysTickHandler) refers to os_core.o(i.OSTimeTick) for OSTimeTick
+    os_cpu_c.o(i.OS_CPU_SysTickHandler) refers to os_core.o(i.OSIntExit) for OSIntExit
+    os_cpu_c.o(i.OS_CPU_SysTickHandler) refers to os_core.o(.data) for OSIntNesting
+    os_cpu_c.o(i.OS_CPU_SysTickInit) refers to system_stm32f10x.o(.data) for SystemCoreClock
+    os_cpu_a.o(.text) refers to os_core.o(.data) for OSRunning
+    os_cpu_a.o(.text) refers to os_cpu_c.o(i.OSTaskSwHook) for OSTaskSwHook
+    os_core.o(i.OSEventNameGet) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_core.o(i.OSEventNameGet) refers to os_core.o(i.OS_StrLen) for OS_StrLen
+    os_core.o(i.OSEventNameGet) refers to os_core.o(.data) for .data
+    os_core.o(i.OSEventNameSet) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_core.o(i.OSEventNameSet) refers to os_core.o(.data) for .data
+    os_core.o(i.OSEventPendMulti) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_core.o(i.OSEventPendMulti) refers to os_core.o(i.OS_EventTaskWaitMulti) for OS_EventTaskWaitMulti
+    os_core.o(i.OSEventPendMulti) refers to os_core.o(i.OS_Sched) for OS_Sched
+    os_core.o(i.OSEventPendMulti) refers to os_core.o(i.OS_EventTaskRemoveMulti) for OS_EventTaskRemoveMulti
+    os_core.o(i.OSEventPendMulti) refers to os_core.o(.data) for .data
+    os_core.o(i.OSInit) refers to os_cpu_c.o(i.OSInitHookBegin) for OSInitHookBegin
+    os_core.o(i.OSInit) refers to os_core.o(i.OS_InitTCBList) for OS_InitTCBList
+    os_core.o(i.OSInit) refers to os_core.o(i.OS_InitEventList) for OS_InitEventList
+    os_core.o(i.OSInit) refers to os_flag.o(i.OS_FlagInit) for OS_FlagInit
+    os_core.o(i.OSInit) refers to os_mem.o(i.OS_MemInit) for OS_MemInit
+    os_core.o(i.OSInit) refers to os_q.o(i.OS_QInit) for OS_QInit
+    os_core.o(i.OSInit) refers to os_task.o(i.OSTaskCreateExt) for OSTaskCreateExt
+    os_core.o(i.OSInit) refers to os_task.o(i.OSTaskNameSet) for OSTaskNameSet
+    os_core.o(i.OSInit) refers to os_tmr.o(i.OSTmr_Init) for OSTmr_Init
+    os_core.o(i.OSInit) refers to os_cpu_c.o(i.OSInitHookEnd) for OSInitHookEnd
+    os_core.o(i.OSInit) refers to os_dbg.o(i.OSDebugInit) for OSDebugInit
+    os_core.o(i.OSInit) refers to os_core.o(.data) for .data
+    os_core.o(i.OSInit) refers to os_core.o(.bss) for .bss
+    os_core.o(i.OSInit) refers to os_core.o(i.OS_TaskIdle) for OS_TaskIdle
+    os_core.o(i.OSInit) refers to os_core.o(i.OS_TaskStat) for OS_TaskStat
+    os_core.o(i.OSIntEnter) refers to os_core.o(.data) for .data
+    os_core.o(i.OSIntExit) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_core.o(i.OSIntExit) refers to os_core.o(i.OS_SchedNew) for OS_SchedNew
+    os_core.o(i.OSIntExit) refers to os_core.o(.data) for .data
+    os_core.o(i.OSIntExit) refers to os_core.o(.bss) for .bss
+    os_core.o(i.OSSchedLock) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_core.o(i.OSSchedLock) refers to os_core.o(.data) for .data
+    os_core.o(i.OSSchedUnlock) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_core.o(i.OSSchedUnlock) refers to os_core.o(i.OS_Sched) for OS_Sched
+    os_core.o(i.OSSchedUnlock) refers to os_core.o(.data) for .data
+    os_core.o(i.OSStart) refers to os_core.o(i.OS_SchedNew) for OS_SchedNew
+    os_core.o(i.OSStart) refers to os_cpu_a.o(.text) for OSStartHighRdy
+    os_core.o(i.OSStart) refers to os_core.o(.data) for .data
+    os_core.o(i.OSStart) refers to os_core.o(.bss) for .bss
+    os_core.o(i.OSStatInit) refers to os_time.o(i.OSTimeDly) for OSTimeDly
+    os_core.o(i.OSStatInit) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_core.o(i.OSStatInit) refers to os_core.o(.data) for .data
+    os_core.o(i.OSTimeTick) refers to os_cpu_c.o(i.OSTimeTickHook) for OSTimeTickHook
+    os_core.o(i.OSTimeTick) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_core.o(i.OSTimeTick) refers to os_core.o(.data) for .data
+    os_core.o(i.OS_EventTaskRdy) refers to os_core.o(i.OS_EventTaskRemove) for OS_EventTaskRemove
+    os_core.o(i.OS_EventTaskRdy) refers to os_core.o(i.OS_EventTaskRemoveMulti) for OS_EventTaskRemoveMulti
+    os_core.o(i.OS_EventTaskRdy) refers to os_core.o(.constdata) for .constdata
+    os_core.o(i.OS_EventTaskRdy) refers to os_core.o(.bss) for .bss
+    os_core.o(i.OS_EventTaskRdy) refers to os_core.o(.data) for .data
+    os_core.o(i.OS_EventTaskWait) refers to os_core.o(.data) for .data
+    os_core.o(i.OS_EventTaskWaitMulti) refers to os_core.o(.data) for .data
+    os_core.o(i.OS_InitEventList) refers to os_core.o(i.OS_MemClr) for OS_MemClr
+    os_core.o(i.OS_InitEventList) refers to os_core.o(.bss) for .bss
+    os_core.o(i.OS_InitEventList) refers to os_core.o(.data) for .data
+    os_core.o(i.OS_InitTCBList) refers to os_core.o(i.OS_MemClr) for OS_MemClr
+    os_core.o(i.OS_InitTCBList) refers to os_core.o(.bss) for .bss
+    os_core.o(i.OS_InitTCBList) refers to os_core.o(.data) for .data
+    os_core.o(i.OS_Sched) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_core.o(i.OS_Sched) refers to os_core.o(i.OS_SchedNew) for OS_SchedNew
+    os_core.o(i.OS_Sched) refers to os_core.o(.data) for .data
+    os_core.o(i.OS_Sched) refers to os_core.o(.bss) for .bss
+    os_core.o(i.OS_SchedNew) refers to os_core.o(.constdata) for .constdata
+    os_core.o(i.OS_SchedNew) refers to os_core.o(.data) for .data
+    os_core.o(i.OS_TCBInit) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_core.o(i.OS_TCBInit) refers to os_cpu_c.o(i.OSTCBInitHook) for OSTCBInitHook
+    os_core.o(i.OS_TCBInit) refers to os_cpu_c.o(i.OSTaskCreateHook) for OSTaskCreateHook
+    os_core.o(i.OS_TCBInit) refers to os_core.o(.data) for .data
+    os_core.o(i.OS_TCBInit) refers to os_core.o(.bss) for .bss
+    os_core.o(i.OS_TaskIdle) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_core.o(i.OS_TaskIdle) refers to os_cpu_c.o(i.OSTaskIdleHook) for OSTaskIdleHook
+    os_core.o(i.OS_TaskIdle) refers to os_core.o(.data) for .data
+    os_core.o(i.OS_TaskStat) refers to os_time.o(i.OSTimeDly) for OSTimeDly
+    os_core.o(i.OS_TaskStat) refers to os_task.o(i.OSTaskSuspend) for OSTaskSuspend
+    os_core.o(i.OS_TaskStat) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_core.o(i.OS_TaskStat) refers to os_cpu_c.o(i.OSTaskStatHook) for OSTaskStatHook
+    os_core.o(i.OS_TaskStat) refers to os_core.o(i.OS_TaskStatStkChk) for OS_TaskStatStkChk
+    os_core.o(i.OS_TaskStat) refers to os_core.o(.data) for .data
+    os_core.o(i.OS_TaskStatStkChk) refers to os_task.o(i.OSTaskStkChk) for OSTaskStkChk
+    os_core.o(i.OS_TaskStatStkChk) refers to os_core.o(.bss) for .bss
+    os_flag.o(i.OSFlagAccept) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_flag.o(i.OSFlagCreate) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_flag.o(i.OSFlagCreate) refers to os_core.o(.data) for OSIntNesting
+    os_flag.o(i.OSFlagCreate) refers to os_core.o(.data) for OSFlagFreeList
+    os_flag.o(i.OSFlagDel) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_flag.o(i.OSFlagDel) refers to os_flag.o(i.OS_FlagTaskRdy) for OS_FlagTaskRdy
+    os_flag.o(i.OSFlagDel) refers to os_core.o(i.OS_Sched) for OS_Sched
+    os_flag.o(i.OSFlagDel) refers to os_core.o(.data) for OSIntNesting
+    os_flag.o(i.OSFlagDel) refers to os_core.o(.data) for OSFlagFreeList
+    os_flag.o(i.OSFlagNameGet) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_flag.o(i.OSFlagNameGet) refers to os_core.o(i.OS_StrLen) for OS_StrLen
+    os_flag.o(i.OSFlagNameGet) refers to os_core.o(.data) for OSIntNesting
+    os_flag.o(i.OSFlagNameSet) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_flag.o(i.OSFlagNameSet) refers to os_core.o(.data) for OSIntNesting
+    os_flag.o(i.OSFlagPend) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_flag.o(i.OSFlagPend) refers to os_flag.o(i.OS_FlagBlock) for OS_FlagBlock
+    os_flag.o(i.OSFlagPend) refers to os_core.o(i.OS_Sched) for OS_Sched
+    os_flag.o(i.OSFlagPend) refers to os_flag.o(i.OS_FlagUnlink) for OS_FlagUnlink
+    os_flag.o(i.OSFlagPend) refers to os_core.o(.data) for OSIntNesting
+    os_flag.o(i.OSFlagPendGetFlagsRdy) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_flag.o(i.OSFlagPendGetFlagsRdy) refers to os_core.o(.data) for OSTCBCur
+    os_flag.o(i.OSFlagPost) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_flag.o(i.OSFlagPost) refers to os_flag.o(i.OS_FlagTaskRdy) for OS_FlagTaskRdy
+    os_flag.o(i.OSFlagPost) refers to os_core.o(i.OS_Sched) for OS_Sched
+    os_flag.o(i.OSFlagQuery) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_flag.o(i.OS_FlagBlock) refers to os_core.o(.data) for OSTCBCur
+    os_flag.o(i.OS_FlagInit) refers to os_core.o(i.OS_MemClr) for OS_MemClr
+    os_flag.o(i.OS_FlagInit) refers to os_core.o(.bss) for OSFlagTbl
+    os_flag.o(i.OS_FlagInit) refers to os_core.o(.data) for OSFlagFreeList
+    os_flag.o(i.OS_FlagTaskRdy) refers to os_flag.o(i.OS_FlagUnlink) for OS_FlagUnlink
+    os_flag.o(i.OS_FlagTaskRdy) refers to os_core.o(.data) for OSRdyGrp
+    os_mbox.o(i.OSMboxAccept) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_mbox.o(i.OSMboxCreate) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_mbox.o(i.OSMboxCreate) refers to os_core.o(i.OS_EventWaitListInit) for OS_EventWaitListInit
+    os_mbox.o(i.OSMboxCreate) refers to os_core.o(.data) for OSIntNesting
+    os_mbox.o(i.OSMboxDel) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_mbox.o(i.OSMboxDel) refers to os_core.o(i.OS_EventTaskRdy) for OS_EventTaskRdy
+    os_mbox.o(i.OSMboxDel) refers to os_core.o(i.OS_Sched) for OS_Sched
+    os_mbox.o(i.OSMboxDel) refers to os_core.o(.data) for OSIntNesting
+    os_mbox.o(i.OSMboxPend) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_mbox.o(i.OSMboxPend) refers to os_core.o(i.OS_EventTaskWait) for OS_EventTaskWait
+    os_mbox.o(i.OSMboxPend) refers to os_core.o(i.OS_Sched) for OS_Sched
+    os_mbox.o(i.OSMboxPend) refers to os_core.o(i.OS_EventTaskRemove) for OS_EventTaskRemove
+    os_mbox.o(i.OSMboxPend) refers to os_core.o(.data) for OSIntNesting
+    os_mbox.o(i.OSMboxPendAbort) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_mbox.o(i.OSMboxPendAbort) refers to os_core.o(i.OS_EventTaskRdy) for OS_EventTaskRdy
+    os_mbox.o(i.OSMboxPendAbort) refers to os_core.o(i.OS_Sched) for OS_Sched
+    os_mbox.o(i.OSMboxPost) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_mbox.o(i.OSMboxPost) refers to os_core.o(i.OS_EventTaskRdy) for OS_EventTaskRdy
+    os_mbox.o(i.OSMboxPost) refers to os_core.o(i.OS_Sched) for OS_Sched
+    os_mbox.o(i.OSMboxPostOpt) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_mbox.o(i.OSMboxPostOpt) refers to os_core.o(i.OS_EventTaskRdy) for OS_EventTaskRdy
+    os_mbox.o(i.OSMboxPostOpt) refers to os_core.o(i.OS_Sched) for OS_Sched
+    os_mbox.o(i.OSMboxQuery) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_mem.o(i.OSMemCreate) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_mem.o(i.OSMemCreate) refers to os_core.o(.data) for OSMemFreeList
+    os_mem.o(i.OSMemGet) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_mem.o(i.OSMemNameGet) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_mem.o(i.OSMemNameGet) refers to os_core.o(i.OS_StrLen) for OS_StrLen
+    os_mem.o(i.OSMemNameGet) refers to os_core.o(.data) for OSIntNesting
+    os_mem.o(i.OSMemNameSet) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_mem.o(i.OSMemNameSet) refers to os_core.o(.data) for OSIntNesting
+    os_mem.o(i.OSMemPut) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_mem.o(i.OSMemQuery) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_mem.o(i.OS_MemInit) refers to os_core.o(i.OS_MemClr) for OS_MemClr
+    os_mem.o(i.OS_MemInit) refers to os_core.o(.bss) for OSMemTbl
+    os_mem.o(i.OS_MemInit) refers to os_core.o(.data) for OSMemFreeList
+    os_mutex.o(i.OSMutexAccept) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_mutex.o(i.OSMutexAccept) refers to os_core.o(.data) for OSIntNesting
+    os_mutex.o(i.OSMutexCreate) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_mutex.o(i.OSMutexCreate) refers to os_core.o(i.OS_EventWaitListInit) for OS_EventWaitListInit
+    os_mutex.o(i.OSMutexCreate) refers to os_core.o(.data) for OSIntNesting
+    os_mutex.o(i.OSMutexCreate) refers to os_core.o(.bss) for OSTCBPrioTbl
+    os_mutex.o(i.OSMutexDel) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_mutex.o(i.OSMutexDel) refers to os_mutex.o(i.OSMutex_RdyAtPrio) for OSMutex_RdyAtPrio
+    os_mutex.o(i.OSMutexDel) refers to os_core.o(i.OS_EventTaskRdy) for OS_EventTaskRdy
+    os_mutex.o(i.OSMutexDel) refers to os_core.o(i.OS_Sched) for OS_Sched
+    os_mutex.o(i.OSMutexDel) refers to os_core.o(.data) for OSIntNesting
+    os_mutex.o(i.OSMutexDel) refers to os_core.o(.bss) for OSTCBPrioTbl
+    os_mutex.o(i.OSMutexPend) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_mutex.o(i.OSMutexPend) refers to os_core.o(i.OS_EventTaskWait) for OS_EventTaskWait
+    os_mutex.o(i.OSMutexPend) refers to os_core.o(i.OS_Sched) for OS_Sched
+    os_mutex.o(i.OSMutexPend) refers to os_core.o(i.OS_EventTaskRemove) for OS_EventTaskRemove
+    os_mutex.o(i.OSMutexPend) refers to os_core.o(.data) for OSIntNesting
+    os_mutex.o(i.OSMutexPend) refers to os_core.o(.bss) for OSTCBPrioTbl
+    os_mutex.o(i.OSMutexPost) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_mutex.o(i.OSMutexPost) refers to os_mutex.o(i.OSMutex_RdyAtPrio) for OSMutex_RdyAtPrio
+    os_mutex.o(i.OSMutexPost) refers to os_core.o(i.OS_EventTaskRdy) for OS_EventTaskRdy
+    os_mutex.o(i.OSMutexPost) refers to os_core.o(i.OS_Sched) for OS_Sched
+    os_mutex.o(i.OSMutexPost) refers to os_core.o(.data) for OSIntNesting
+    os_mutex.o(i.OSMutexPost) refers to os_core.o(.bss) for OSTCBPrioTbl
+    os_mutex.o(i.OSMutexQuery) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_mutex.o(i.OSMutexQuery) refers to os_core.o(.data) for OSIntNesting
+    os_mutex.o(i.OSMutex_RdyAtPrio) refers to os_core.o(.data) for OSRdyTbl
+    os_mutex.o(i.OSMutex_RdyAtPrio) refers to os_core.o(.bss) for OSTCBPrioTbl
+    os_q.o(i.OSQAccept) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_q.o(i.OSQCreate) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_q.o(i.OSQCreate) refers to os_core.o(i.OS_EventWaitListInit) for OS_EventWaitListInit
+    os_q.o(i.OSQCreate) refers to os_core.o(.data) for OSIntNesting
+    os_q.o(i.OSQCreate) refers to os_core.o(.data) for OSQFreeList
+    os_q.o(i.OSQDel) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_q.o(i.OSQDel) refers to os_core.o(i.OS_EventTaskRdy) for OS_EventTaskRdy
+    os_q.o(i.OSQDel) refers to os_core.o(i.OS_Sched) for OS_Sched
+    os_q.o(i.OSQDel) refers to os_core.o(.data) for OSIntNesting
+    os_q.o(i.OSQDel) refers to os_core.o(.data) for OSQFreeList
+    os_q.o(i.OSQFlush) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_q.o(i.OSQPend) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_q.o(i.OSQPend) refers to os_core.o(i.OS_EventTaskWait) for OS_EventTaskWait
+    os_q.o(i.OSQPend) refers to os_core.o(i.OS_Sched) for OS_Sched
+    os_q.o(i.OSQPend) refers to os_core.o(i.OS_EventTaskRemove) for OS_EventTaskRemove
+    os_q.o(i.OSQPend) refers to os_core.o(.data) for OSIntNesting
+    os_q.o(i.OSQPendAbort) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_q.o(i.OSQPendAbort) refers to os_core.o(i.OS_EventTaskRdy) for OS_EventTaskRdy
+    os_q.o(i.OSQPendAbort) refers to os_core.o(i.OS_Sched) for OS_Sched
+    os_q.o(i.OSQPost) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_q.o(i.OSQPost) refers to os_core.o(i.OS_EventTaskRdy) for OS_EventTaskRdy
+    os_q.o(i.OSQPost) refers to os_core.o(i.OS_Sched) for OS_Sched
+    os_q.o(i.OSQPostFront) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_q.o(i.OSQPostFront) refers to os_core.o(i.OS_EventTaskRdy) for OS_EventTaskRdy
+    os_q.o(i.OSQPostFront) refers to os_core.o(i.OS_Sched) for OS_Sched
+    os_q.o(i.OSQPostOpt) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_q.o(i.OSQPostOpt) refers to os_core.o(i.OS_EventTaskRdy) for OS_EventTaskRdy
+    os_q.o(i.OSQPostOpt) refers to os_core.o(i.OS_Sched) for OS_Sched
+    os_q.o(i.OSQQuery) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_q.o(i.OS_QInit) refers to os_core.o(i.OS_MemClr) for OS_MemClr
+    os_q.o(i.OS_QInit) refers to os_core.o(.bss) for OSQTbl
+    os_q.o(i.OS_QInit) refers to os_core.o(.data) for OSQFreeList
+    os_sem.o(i.OSSemAccept) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_sem.o(i.OSSemCreate) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_sem.o(i.OSSemCreate) refers to os_core.o(i.OS_EventWaitListInit) for OS_EventWaitListInit
+    os_sem.o(i.OSSemCreate) refers to os_core.o(.data) for OSIntNesting
+    os_sem.o(i.OSSemDel) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_sem.o(i.OSSemDel) refers to os_core.o(i.OS_EventTaskRdy) for OS_EventTaskRdy
+    os_sem.o(i.OSSemDel) refers to os_core.o(i.OS_Sched) for OS_Sched
+    os_sem.o(i.OSSemDel) refers to os_core.o(.data) for OSIntNesting
+    os_sem.o(i.OSSemPend) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_sem.o(i.OSSemPend) refers to os_core.o(i.OS_EventTaskWait) for OS_EventTaskWait
+    os_sem.o(i.OSSemPend) refers to os_core.o(i.OS_Sched) for OS_Sched
+    os_sem.o(i.OSSemPend) refers to os_core.o(i.OS_EventTaskRemove) for OS_EventTaskRemove
+    os_sem.o(i.OSSemPend) refers to os_core.o(.data) for OSIntNesting
+    os_sem.o(i.OSSemPendAbort) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_sem.o(i.OSSemPendAbort) refers to os_core.o(i.OS_EventTaskRdy) for OS_EventTaskRdy
+    os_sem.o(i.OSSemPendAbort) refers to os_core.o(i.OS_Sched) for OS_Sched
+    os_sem.o(i.OSSemPost) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_sem.o(i.OSSemPost) refers to os_core.o(i.OS_EventTaskRdy) for OS_EventTaskRdy
+    os_sem.o(i.OSSemPost) refers to os_core.o(i.OS_Sched) for OS_Sched
+    os_sem.o(i.OSSemQuery) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_sem.o(i.OSSemSet) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_task.o(i.OSTaskChangePrio) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_task.o(i.OSTaskChangePrio) refers to os_core.o(i.OS_Sched) for OS_Sched
+    os_task.o(i.OSTaskChangePrio) refers to os_core.o(.bss) for OSTCBPrioTbl
+    os_task.o(i.OSTaskChangePrio) refers to os_core.o(.data) for OSTCBCur
+    os_task.o(i.OSTaskCreate) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_task.o(i.OSTaskCreate) refers to os_cpu_c.o(i.OSTaskStkInit) for OSTaskStkInit
+    os_task.o(i.OSTaskCreate) refers to os_core.o(i.OS_TCBInit) for OS_TCBInit
+    os_task.o(i.OSTaskCreate) refers to os_core.o(i.OS_Sched) for OS_Sched
+    os_task.o(i.OSTaskCreate) refers to os_core.o(.data) for OSIntNesting
+    os_task.o(i.OSTaskCreate) refers to os_core.o(.bss) for OSTCBPrioTbl
+    os_task.o(i.OSTaskCreateExt) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_task.o(i.OSTaskCreateExt) refers to os_task.o(i.OS_TaskStkClr) for OS_TaskStkClr
+    os_task.o(i.OSTaskCreateExt) refers to os_cpu_c.o(i.OSTaskStkInit) for OSTaskStkInit
+    os_task.o(i.OSTaskCreateExt) refers to os_core.o(i.OS_TCBInit) for OS_TCBInit
+    os_task.o(i.OSTaskCreateExt) refers to os_core.o(i.OS_Sched) for OS_Sched
+    os_task.o(i.OSTaskCreateExt) refers to os_core.o(.data) for OSIntNesting
+    os_task.o(i.OSTaskCreateExt) refers to os_core.o(.bss) for OSTCBPrioTbl
+    os_task.o(i.OSTaskDel) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_task.o(i.OSTaskDel) refers to os_core.o(i.OS_EventTaskRemove) for OS_EventTaskRemove
+    os_task.o(i.OSTaskDel) refers to os_core.o(i.OS_EventTaskRemoveMulti) for OS_EventTaskRemoveMulti
+    os_task.o(i.OSTaskDel) refers to os_flag.o(i.OS_FlagUnlink) for OS_FlagUnlink
+    os_task.o(i.OSTaskDel) refers to os_core.o(i.OS_Dummy) for OS_Dummy
+    os_task.o(i.OSTaskDel) refers to os_cpu_c.o(i.OSTaskDelHook) for OSTaskDelHook
+    os_task.o(i.OSTaskDel) refers to os_core.o(i.OS_Sched) for OS_Sched
+    os_task.o(i.OSTaskDel) refers to os_core.o(.data) for OSIntNesting
+    os_task.o(i.OSTaskDel) refers to os_core.o(.bss) for OSTCBPrioTbl
+    os_task.o(i.OSTaskDelReq) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_task.o(i.OSTaskDelReq) refers to os_core.o(.data) for OSTCBCur
+    os_task.o(i.OSTaskDelReq) refers to os_core.o(.bss) for OSTCBPrioTbl
+    os_task.o(i.OSTaskNameGet) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_task.o(i.OSTaskNameGet) refers to os_core.o(i.OS_StrLen) for OS_StrLen
+    os_task.o(i.OSTaskNameGet) refers to os_core.o(.data) for OSIntNesting
+    os_task.o(i.OSTaskNameGet) refers to os_core.o(.bss) for OSTCBPrioTbl
+    os_task.o(i.OSTaskNameSet) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_task.o(i.OSTaskNameSet) refers to os_core.o(.data) for OSIntNesting
+    os_task.o(i.OSTaskNameSet) refers to os_core.o(.bss) for OSTCBPrioTbl
+    os_task.o(i.OSTaskQuery) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_task.o(i.OSTaskQuery) refers to os_core.o(i.OS_MemCopy) for OS_MemCopy
+    os_task.o(i.OSTaskQuery) refers to os_core.o(.data) for OSTCBCur
+    os_task.o(i.OSTaskQuery) refers to os_core.o(.bss) for OSTCBPrioTbl
+    os_task.o(i.OSTaskRegGet) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_task.o(i.OSTaskRegGet) refers to os_core.o(.bss) for OSTCBPrioTbl
+    os_task.o(i.OSTaskRegGet) refers to os_core.o(.data) for OSTCBCur
+    os_task.o(i.OSTaskRegSet) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_task.o(i.OSTaskRegSet) refers to os_core.o(.bss) for OSTCBPrioTbl
+    os_task.o(i.OSTaskRegSet) refers to os_core.o(.data) for OSTCBCur
+    os_task.o(i.OSTaskResume) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_task.o(i.OSTaskResume) refers to os_core.o(i.OS_Sched) for OS_Sched
+    os_task.o(i.OSTaskResume) refers to os_core.o(.bss) for OSTCBPrioTbl
+    os_task.o(i.OSTaskResume) refers to os_core.o(.data) for OSRdyGrp
+    os_task.o(i.OSTaskStkChk) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_task.o(i.OSTaskStkChk) refers to os_core.o(.data) for OSTCBCur
+    os_task.o(i.OSTaskStkChk) refers to os_core.o(.bss) for OSTCBPrioTbl
+    os_task.o(i.OSTaskSuspend) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_task.o(i.OSTaskSuspend) refers to os_core.o(i.OS_Sched) for OS_Sched
+    os_task.o(i.OSTaskSuspend) refers to os_core.o(.data) for OSTCBCur
+    os_task.o(i.OSTaskSuspend) refers to os_core.o(.bss) for OSTCBPrioTbl
+    os_task.o(i.OS_TaskReturn) refers to os_apphooks.o(i.OSTaskReturnHook) for OSTaskReturnHook
+    os_task.o(i.OS_TaskReturn) refers to os_task.o(i.OSTaskDel) for OSTaskDel
+    os_task.o(i.OS_TaskReturn) refers to os_core.o(.data) for OSTCBCur
+    os_time.o(i.OSTimeDly) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_time.o(i.OSTimeDly) refers to os_core.o(i.OS_Sched) for OS_Sched
+    os_time.o(i.OSTimeDly) refers to os_core.o(.data) for OSIntNesting
+    os_time.o(i.OSTimeDlyHMSM) refers to os_time.o(i.OSTimeDly) for OSTimeDly
+    os_time.o(i.OSTimeDlyHMSM) refers to os_core.o(.data) for OSIntNesting
+    os_time.o(i.OSTimeDlyResume) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_time.o(i.OSTimeDlyResume) refers to os_core.o(i.OS_Sched) for OS_Sched
+    os_time.o(i.OSTimeDlyResume) refers to os_core.o(.bss) for OSTCBPrioTbl
+    os_time.o(i.OSTimeDlyResume) refers to os_core.o(.data) for OSRdyGrp
+    os_time.o(i.OSTimeGet) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_time.o(i.OSTimeGet) refers to os_core.o(.data) for OSTime
+    os_time.o(i.OSTimeSet) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_time.o(i.OSTimeSet) refers to os_core.o(.data) for OSTime
+    os_tmr.o(i.OSTmrCreate) refers to os_core.o(i.OSSchedLock) for OSSchedLock
+    os_tmr.o(i.OSTmrCreate) refers to os_core.o(i.OSSchedUnlock) for OSSchedUnlock
+    os_tmr.o(i.OSTmrCreate) refers to os_core.o(.data) for OSIntNesting
+    os_tmr.o(i.OSTmrCreate) refers to os_core.o(.data) for OSTmrFreeList
+    os_tmr.o(i.OSTmrCreate) refers to os_core.o(.data) for OSTmrUsed
+    os_tmr.o(i.OSTmrCreate) refers to os_core.o(.data) for OSTmrFree
+    os_tmr.o(i.OSTmrDel) refers to os_core.o(i.OSSchedLock) for OSSchedLock
+    os_tmr.o(i.OSTmrDel) refers to os_core.o(i.OSSchedUnlock) for OSSchedUnlock
+    os_tmr.o(i.OSTmrDel) refers to os_tmr.o(i.OSTmr_Unlink) for OSTmr_Unlink
+    os_tmr.o(i.OSTmrDel) refers to os_tmr.o(i.OSTmr_Free) for OSTmr_Free
+    os_tmr.o(i.OSTmrDel) refers to os_core.o(.data) for OSIntNesting
+    os_tmr.o(i.OSTmrNameGet) refers to os_core.o(i.OSSchedLock) for OSSchedLock
+    os_tmr.o(i.OSTmrNameGet) refers to os_core.o(i.OSSchedUnlock) for OSSchedUnlock
+    os_tmr.o(i.OSTmrNameGet) refers to os_core.o(i.OS_StrLen) for OS_StrLen
+    os_tmr.o(i.OSTmrNameGet) refers to os_core.o(.data) for OSIntNesting
+    os_tmr.o(i.OSTmrRemainGet) refers to os_core.o(i.OSSchedLock) for OSSchedLock
+    os_tmr.o(i.OSTmrRemainGet) refers to os_core.o(i.OSSchedUnlock) for OSSchedUnlock
+    os_tmr.o(i.OSTmrRemainGet) refers to os_core.o(.data) for OSIntNesting
+    os_tmr.o(i.OSTmrRemainGet) refers to os_core.o(.data) for OSTmrTime
+    os_tmr.o(i.OSTmrSignal) refers to os_sem.o(i.OSSemPost) for OSSemPost
+    os_tmr.o(i.OSTmrSignal) refers to os_core.o(.data) for OSTmrSemSignal
+    os_tmr.o(i.OSTmrStart) refers to os_core.o(i.OSSchedLock) for OSSchedLock
+    os_tmr.o(i.OSTmrStart) refers to os_core.o(i.OSSchedUnlock) for OSSchedUnlock
+    os_tmr.o(i.OSTmrStart) refers to os_tmr.o(i.OSTmr_Unlink) for OSTmr_Unlink
+    os_tmr.o(i.OSTmrStart) refers to os_tmr.o(i.OSTmr_Link) for OSTmr_Link
+    os_tmr.o(i.OSTmrStart) refers to os_core.o(.data) for OSIntNesting
+    os_tmr.o(i.OSTmrStateGet) refers to os_core.o(i.OSSchedLock) for OSSchedLock
+    os_tmr.o(i.OSTmrStateGet) refers to os_core.o(i.OSSchedUnlock) for OSSchedUnlock
+    os_tmr.o(i.OSTmrStateGet) refers to os_core.o(.data) for OSIntNesting
+    os_tmr.o(i.OSTmrStop) refers to os_core.o(i.OSSchedLock) for OSSchedLock
+    os_tmr.o(i.OSTmrStop) refers to os_core.o(i.OSSchedUnlock) for OSSchedUnlock
+    os_tmr.o(i.OSTmrStop) refers to os_tmr.o(i.OSTmr_Unlink) for OSTmr_Unlink
+    os_tmr.o(i.OSTmrStop) refers to os_core.o(.data) for OSIntNesting
+    os_tmr.o(i.OSTmr_Free) refers to os_core.o(.data) for OSTmrFreeList
+    os_tmr.o(i.OSTmr_Free) refers to os_core.o(.data) for OSTmrUsed
+    os_tmr.o(i.OSTmr_Free) refers to os_core.o(.data) for OSTmrFree
+    os_tmr.o(i.OSTmr_Init) refers to os_core.o(i.OS_MemClr) for OS_MemClr
+    os_tmr.o(i.OSTmr_Init) refers to os_sem.o(i.OSSemCreate) for OSSemCreate
+    os_tmr.o(i.OSTmr_Init) refers to os_core.o(i.OSEventNameSet) for OSEventNameSet
+    os_tmr.o(i.OSTmr_Init) refers to os_task.o(i.OSTaskCreateExt) for OSTaskCreateExt
+    os_tmr.o(i.OSTmr_Init) refers to os_task.o(i.OSTaskNameSet) for OSTaskNameSet
+    os_tmr.o(i.OSTmr_Init) refers to os_core.o(.bss) for OSTmrTbl
+    os_tmr.o(i.OSTmr_Init) refers to os_core.o(.bss) for OSTmrWheelTbl
+    os_tmr.o(i.OSTmr_Init) refers to os_core.o(.data) for OSTmrTime
+    os_tmr.o(i.OSTmr_Init) refers to os_core.o(.data) for OSTmrUsed
+    os_tmr.o(i.OSTmr_Init) refers to os_core.o(.data) for OSTmrFree
+    os_tmr.o(i.OSTmr_Init) refers to os_core.o(.data) for OSTmrFreeList
+    os_tmr.o(i.OSTmr_Init) refers to os_core.o(.data) for OSTmrSem
+    os_tmr.o(i.OSTmr_Init) refers to os_core.o(.data) for OSTmrSemSignal
+    os_tmr.o(i.OSTmr_Init) refers to os_core.o(.bss) for OSTmrTaskStk
+    os_tmr.o(i.OSTmr_Init) refers to os_tmr.o(i.OSTmr_Task) for OSTmr_Task
+    os_tmr.o(i.OSTmr_Link) refers to os_core.o(.data) for OSTmrTime
+    os_tmr.o(i.OSTmr_Link) refers to os_core.o(.bss) for OSTmrWheelTbl
+    os_tmr.o(i.OSTmr_Task) refers to os_sem.o(i.OSSemPend) for OSSemPend
+    os_tmr.o(i.OSTmr_Task) refers to os_core.o(i.OSSchedLock) for OSSchedLock
+    os_tmr.o(i.OSTmr_Task) refers to os_tmr.o(i.OSTmr_Unlink) for OSTmr_Unlink
+    os_tmr.o(i.OSTmr_Task) refers to os_core.o(i.OSSchedUnlock) for OSSchedUnlock
+    os_tmr.o(i.OSTmr_Task) refers to os_tmr.o(i.OSTmr_Link) for OSTmr_Link
+    os_tmr.o(i.OSTmr_Task) refers to os_core.o(.data) for OSTmrSemSignal
+    os_tmr.o(i.OSTmr_Task) refers to os_core.o(.bss) for OSTmrWheelTbl
+    os_tmr.o(i.OSTmr_Task) refers to os_core.o(.data) for OSTmrTime
+    os_tmr.o(i.OSTmr_Unlink) refers to os_core.o(.bss) for OSTmrWheelTbl
+    cpu_c.o(i.CPU_IntSrcDis) refers to cpu_a.o(.text) for CPU_SR_Save
+    cpu_c.o(i.CPU_IntSrcEn) refers to cpu_a.o(.text) for CPU_SR_Save
+    cpu_c.o(i.CPU_IntSrcPrioGet) refers to cpu_a.o(.text) for CPU_SR_Save
+    cpu_c.o(i.CPU_IntSrcPrioSet) refers to cpu_a.o(.text) for CPU_RevBits
+    lib_mem.o(i.Mem_Clr) refers to lib_mem.o(i.Mem_Set) for Mem_Set
+    lib_str.o(i.Str_Char_Last) refers to lib_str.o(i.Str_Len) for Str_Len
+    lib_str.o(i.Str_Str) refers to lib_str.o(i.Str_Len) for Str_Len
+    lib_str.o(i.Str_Str) refers to lib_str.o(i.Str_Cmp_N) for Str_Cmp_N
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry10a.o(.ARM.Collect$$$$0000000D) for __rt_final_cpp
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry11a.o(.ARM.Collect$$$$0000000F) for __rt_final_exit
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry7b.o(.ARM.Collect$$$$00000008) for _main_clock
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry8b.o(.ARM.Collect$$$$0000000A) for _main_cpp_init
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry9a.o(.ARM.Collect$$$$0000000B) for _main_init
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry5.o(.ARM.Collect$$$$00000004) for _main_scatterload
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry2.o(.ARM.Collect$$$$00000001) for _main_stk
+    entry2.o(.ARM.Collect$$$$00000001) refers to entry2.o(.ARM.Collect$$$$00002712) for __lit__00000000
+    entry2.o(.ARM.Collect$$$$00002712) refers to startup_stm32f10x_cl.o(STACK) for __initial_sp
+    entry2.o(__vectab_stack_and_reset_area) refers to startup_stm32f10x_cl.o(STACK) for __initial_sp
+    entry2.o(__vectab_stack_and_reset_area) refers to entry.o(.ARM.Collect$$$$00000000) for __main
+    entry5.o(.ARM.Collect$$$$00000004) refers to init.o(.text) for __scatterload
+    entry9a.o(.ARM.Collect$$$$0000000B) refers to main.o(i.main) for main
+    entry9b.o(.ARM.Collect$$$$0000000C) refers to main.o(i.main) for main
+    init.o(.text) refers to entry5.o(.ARM.Collect$$$$00000004) for __main_after_scatterload
+    glcd.o(i.LCD_WriteReg) refers to glcd.o(i.LCD_WriteIndex) for LCD_WriteIndex
+    glcd.o(i.LCD_WriteReg) refers to glcd.o(i.LCD_WriteData) for LCD_WriteData
+    glcd.o(i.LCD_ReadReg) refers to glcd.o(i.LCD_WriteIndex) for LCD_WriteIndex
+    glcd.o(i.LCD_ReadReg) refers to glcd.o(i.LCD_ReadData) for LCD_ReadData
+
+
+==============================================================================
+
+Removing Unused input sections from the image.
+
+    Removing hzlib.o(i.GetGBKCode), (40 bytes).
+    Removing hzlib.o(.constdata), (216576 bytes).
+    Removing asciilib.o(i.GetASCIICode), (20 bytes).
+    Removing asciilib.o(.constdata), (1520 bytes).
+    Removing glcd.o(i.GUI_Chinese), (72 bytes).
+    Removing glcd.o(i.GUI_Text), (74 bytes).
+    Removing glcd.o(i.LCD_Clear), (148 bytes).
+    Removing glcd.o(i.LCD_DrawLine), (224 bytes).
+    Removing glcd.o(i.LCD_GetPoint), (140 bytes).
+    Removing glcd.o(i.LCD_Initializtion), (5764 bytes).
+    Removing glcd.o(i.LCD_SetCursor), (100 bytes).
+    Removing glcd.o(i.LCD_SetPoint), (32 bytes).
+    Removing glcd.o(i.PutChar), (86 bytes).
+    Removing glcd.o(i.PutChinese), (96 bytes).
+    Removing glcd.o(i.delay_ms), (28 bytes).
+    Removing glcd.o(.data), (1 bytes).
+    Removing misc.o(i.NVIC_Init), (92 bytes).
+    Removing misc.o(i.NVIC_PriorityGroupConfig), (20 bytes).
+    Removing misc.o(i.NVIC_SetVectorTable), (20 bytes).
+    Removing misc.o(i.NVIC_SystemLPConfig), (24 bytes).
+    Removing misc.o(i.SysTick_CLKSourceConfig), (24 bytes).
+    Removing stm32f10x_flash.o(i.FLASH_ClearFlag), (12 bytes).
+    Removing stm32f10x_flash.o(i.FLASH_EnableWriteProtection), (172 bytes).
+    Removing stm32f10x_flash.o(i.FLASH_EraseAllBank1Pages), (56 bytes).
+    Removing stm32f10x_flash.o(i.FLASH_EraseAllPages), (56 bytes).
+    Removing stm32f10x_flash.o(i.FLASH_EraseOptionBytes), (124 bytes).
+    Removing stm32f10x_flash.o(i.FLASH_ErasePage), (60 bytes).
+    Removing stm32f10x_flash.o(i.FLASH_GetBank1Status), (40 bytes).
+    Removing stm32f10x_flash.o(i.FLASH_GetFlagStatus), (32 bytes).
+    Removing stm32f10x_flash.o(i.FLASH_GetPrefetchBufferStatus), (20 bytes).
+    Removing stm32f10x_flash.o(i.FLASH_GetReadOutProtectionStatus), (20 bytes).
+    Removing stm32f10x_flash.o(i.FLASH_GetStatus), (40 bytes).
+    Removing stm32f10x_flash.o(i.FLASH_GetUserOptionByte), (12 bytes).
+    Removing stm32f10x_flash.o(i.FLASH_GetWriteProtectionOptionByte), (12 bytes).
+    Removing stm32f10x_flash.o(i.FLASH_HalfCycleAccessCmd), (24 bytes).
+    Removing stm32f10x_flash.o(i.FLASH_ITConfig), (24 bytes).
+    Removing stm32f10x_flash.o(i.FLASH_Lock), (16 bytes).
+    Removing stm32f10x_flash.o(i.FLASH_LockBank1), (16 bytes).
+    Removing stm32f10x_flash.o(i.FLASH_PrefetchBufferCmd), (24 bytes).
+    Removing stm32f10x_flash.o(i.FLASH_ProgramHalfWord), (52 bytes).
+    Removing stm32f10x_flash.o(i.FLASH_ProgramOptionByteData), (76 bytes).
+    Removing stm32f10x_flash.o(i.FLASH_ProgramWord), (72 bytes).
+    Removing stm32f10x_flash.o(i.FLASH_ReadOutProtection), (136 bytes).
+    Removing stm32f10x_flash.o(i.FLASH_SetLatency), (20 bytes).
+    Removing stm32f10x_flash.o(i.FLASH_Unlock), (24 bytes).
+    Removing stm32f10x_flash.o(i.FLASH_UnlockBank1), (24 bytes).
+    Removing stm32f10x_flash.o(i.FLASH_UserOptionByteConfig), (96 bytes).
+    Removing stm32f10x_flash.o(i.FLASH_WaitForLastBank1Operation), (36 bytes).
+    Removing stm32f10x_flash.o(i.FLASH_WaitForLastOperation), (36 bytes).
+    Removing stm32f10x_gpio.o(i.GPIO_AFIODeInit), (22 bytes).
+    Removing stm32f10x_gpio.o(i.GPIO_DeInit), (180 bytes).
+    Removing stm32f10x_gpio.o(i.GPIO_ETH_MediaInterfaceConfig), (12 bytes).
+    Removing stm32f10x_gpio.o(i.GPIO_EXTILineConfig), (40 bytes).
+    Removing stm32f10x_gpio.o(i.GPIO_EventOutputCmd), (12 bytes).
+    Removing stm32f10x_gpio.o(i.GPIO_EventOutputConfig), (28 bytes).
+    Removing stm32f10x_gpio.o(i.GPIO_Init), (164 bytes).
+    Removing stm32f10x_gpio.o(i.GPIO_PinLockConfig), (16 bytes).
+    Removing stm32f10x_gpio.o(i.GPIO_PinRemapConfig), (88 bytes).
+    Removing stm32f10x_gpio.o(i.GPIO_ReadInputData), (6 bytes).
+    Removing stm32f10x_gpio.o(i.GPIO_ReadInputDataBit), (14 bytes).
+    Removing stm32f10x_gpio.o(i.GPIO_ReadOutputData), (6 bytes).
+    Removing stm32f10x_gpio.o(i.GPIO_ReadOutputDataBit), (14 bytes).
+    Removing stm32f10x_gpio.o(i.GPIO_ResetBits), (4 bytes).
+    Removing stm32f10x_gpio.o(i.GPIO_SetBits), (4 bytes).
+    Removing stm32f10x_gpio.o(i.GPIO_StructInit), (16 bytes).
+    Removing stm32f10x_gpio.o(i.GPIO_Write), (4 bytes).
+    Removing stm32f10x_gpio.o(i.GPIO_WriteBit), (10 bytes).
+    Removing stm32f10x_rcc.o(i.RCC_ADCCLKConfig), (20 bytes).
+    Removing stm32f10x_rcc.o(i.RCC_AHBPeriphClockCmd), (24 bytes).
+    Removing stm32f10x_rcc.o(i.RCC_AHBPeriphResetCmd), (24 bytes).
+    Removing stm32f10x_rcc.o(i.RCC_APB1PeriphClockCmd), (24 bytes).
+    Removing stm32f10x_rcc.o(i.RCC_APB1PeriphResetCmd), (24 bytes).
+    Removing stm32f10x_rcc.o(i.RCC_APB2PeriphClockCmd), (24 bytes).
+    Removing stm32f10x_rcc.o(i.RCC_APB2PeriphResetCmd), (24 bytes).
+    Removing stm32f10x_rcc.o(i.RCC_AdjustHSICalibrationValue), (20 bytes).
+    Removing stm32f10x_rcc.o(i.RCC_BackupResetCmd), (12 bytes).
+    Removing stm32f10x_rcc.o(i.RCC_ClearFlag), (16 bytes).
+    Removing stm32f10x_rcc.o(i.RCC_ClearITPendingBit), (12 bytes).
+    Removing stm32f10x_rcc.o(i.RCC_ClockSecuritySystemCmd), (12 bytes).
+    Removing stm32f10x_rcc.o(i.RCC_DeInit), (76 bytes).
+    Removing stm32f10x_rcc.o(i.RCC_GetClocksFreq), (208 bytes).
+    Removing stm32f10x_rcc.o(i.RCC_GetFlagStatus), (48 bytes).
+    Removing stm32f10x_rcc.o(i.RCC_GetITStatus), (20 bytes).
+    Removing stm32f10x_rcc.o(i.RCC_GetSYSCLKSource), (16 bytes).
+    Removing stm32f10x_rcc.o(i.RCC_HCLKConfig), (20 bytes).
+    Removing stm32f10x_rcc.o(i.RCC_HSEConfig), (52 bytes).
+    Removing stm32f10x_rcc.o(i.RCC_HSICmd), (12 bytes).
+    Removing stm32f10x_rcc.o(i.RCC_I2S2CLKConfig), (12 bytes).
+    Removing stm32f10x_rcc.o(i.RCC_I2S3CLKConfig), (12 bytes).
+    Removing stm32f10x_rcc.o(i.RCC_ITConfig), (24 bytes).
+    Removing stm32f10x_rcc.o(i.RCC_LSEConfig), (32 bytes).
+    Removing stm32f10x_rcc.o(i.RCC_LSICmd), (12 bytes).
+    Removing stm32f10x_rcc.o(i.RCC_MCOConfig), (12 bytes).
+    Removing stm32f10x_rcc.o(i.RCC_OTGFSCLKConfig), (12 bytes).
+    Removing stm32f10x_rcc.o(i.RCC_PCLK1Config), (20 bytes).
+    Removing stm32f10x_rcc.o(i.RCC_PCLK2Config), (20 bytes).
+    Removing stm32f10x_rcc.o(i.RCC_PLL2Cmd), (12 bytes).
+    Removing stm32f10x_rcc.o(i.RCC_PLL2Config), (20 bytes).
+    Removing stm32f10x_rcc.o(i.RCC_PLL3Cmd), (12 bytes).
+    Removing stm32f10x_rcc.o(i.RCC_PLL3Config), (20 bytes).
+    Removing stm32f10x_rcc.o(i.RCC_PLLCmd), (12 bytes).
+    Removing stm32f10x_rcc.o(i.RCC_PLLConfig), (20 bytes).
+    Removing stm32f10x_rcc.o(i.RCC_PREDIV1Config), (28 bytes).
+    Removing stm32f10x_rcc.o(i.RCC_PREDIV2Config), (20 bytes).
+    Removing stm32f10x_rcc.o(i.RCC_RTCCLKCmd), (12 bytes).
+    Removing stm32f10x_rcc.o(i.RCC_RTCCLKConfig), (16 bytes).
+    Removing stm32f10x_rcc.o(i.RCC_SYSCLKConfig), (20 bytes).
+    Removing stm32f10x_rcc.o(i.RCC_WaitForHSEStartUp), (38 bytes).
+    Removing stm32f10x_rcc.o(.data), (20 bytes).
+    Removing stm32f10x_adc.o(i.ADC_AnalogWatchdogCmd), (16 bytes).
+    Removing stm32f10x_adc.o(i.ADC_AnalogWatchdogSingleChannelConfig), (12 bytes).
+    Removing stm32f10x_adc.o(i.ADC_AnalogWatchdogThresholdsConfig), (6 bytes).
+    Removing stm32f10x_adc.o(i.ADC_AutoInjectedConvCmd), (20 bytes).
+    Removing stm32f10x_adc.o(i.ADC_ClearFlag), (6 bytes).
+    Removing stm32f10x_adc.o(i.ADC_ClearITPendingBit), (8 bytes).
+    Removing stm32f10x_adc.o(i.ADC_Cmd), (20 bytes).
+    Removing stm32f10x_adc.o(i.ADC_DMACmd), (20 bytes).
+    Removing stm32f10x_adc.o(i.ADC_DeInit), (68 bytes).
+    Removing stm32f10x_adc.o(i.ADC_DiscModeChannelCountConfig), (16 bytes).
+    Removing stm32f10x_adc.o(i.ADC_DiscModeCmd), (20 bytes).
+    Removing stm32f10x_adc.o(i.ADC_ExternalTrigConvCmd), (20 bytes).
+    Removing stm32f10x_adc.o(i.ADC_ExternalTrigInjectedConvCmd), (20 bytes).
+    Removing stm32f10x_adc.o(i.ADC_ExternalTrigInjectedConvConfig), (12 bytes).
+    Removing stm32f10x_adc.o(i.ADC_GetCalibrationStatus), (14 bytes).
+    Removing stm32f10x_adc.o(i.ADC_GetConversionValue), (6 bytes).
+    Removing stm32f10x_adc.o(i.ADC_GetDualModeConversionValue), (12 bytes).
+    Removing stm32f10x_adc.o(i.ADC_GetFlagStatus), (14 bytes).
+    Removing stm32f10x_adc.o(i.ADC_GetITStatus), (26 bytes).
+    Removing stm32f10x_adc.o(i.ADC_GetInjectedConversionValue), (8 bytes).
+    Removing stm32f10x_adc.o(i.ADC_GetResetCalibrationStatus), (14 bytes).
+    Removing stm32f10x_adc.o(i.ADC_GetSoftwareStartConvStatus), (14 bytes).
+    Removing stm32f10x_adc.o(i.ADC_GetSoftwareStartInjectedConvCmdStatus), (14 bytes).
+    Removing stm32f10x_adc.o(i.ADC_ITConfig), (18 bytes).
+    Removing stm32f10x_adc.o(i.ADC_Init), (72 bytes).
+    Removing stm32f10x_adc.o(i.ADC_InjectedChannelConfig), (74 bytes).
+    Removing stm32f10x_adc.o(i.ADC_InjectedDiscModeCmd), (20 bytes).
+    Removing stm32f10x_adc.o(i.ADC_InjectedSequencerLengthConfig), (16 bytes).
+    Removing stm32f10x_adc.o(i.ADC_RegularChannelConfig), (116 bytes).
+    Removing stm32f10x_adc.o(i.ADC_ResetCalibration), (10 bytes).
+    Removing stm32f10x_adc.o(i.ADC_SetInjectedOffset), (4 bytes).
+    Removing stm32f10x_adc.o(i.ADC_SoftwareStartConvCmd), (20 bytes).
+    Removing stm32f10x_adc.o(i.ADC_SoftwareStartInjectedConvCmd), (20 bytes).
+    Removing stm32f10x_adc.o(i.ADC_StartCalibration), (10 bytes).
+    Removing stm32f10x_adc.o(i.ADC_StructInit), (18 bytes).
+    Removing stm32f10x_adc.o(i.ADC_TempSensorVrefintCmd), (32 bytes).
+    Removing stm32f10x_bkp.o(i.BKP_ClearFlag), (16 bytes).
+    Removing stm32f10x_bkp.o(i.BKP_ClearITPendingBit), (16 bytes).
+    Removing stm32f10x_bkp.o(i.BKP_DeInit), (18 bytes).
+    Removing stm32f10x_bkp.o(i.BKP_GetFlagStatus), (12 bytes).
+    Removing stm32f10x_bkp.o(i.BKP_GetITStatus), (12 bytes).
+    Removing stm32f10x_bkp.o(i.BKP_ITConfig), (12 bytes).
+    Removing stm32f10x_bkp.o(i.BKP_RTCOutputConfig), (20 bytes).
+    Removing stm32f10x_bkp.o(i.BKP_ReadBackupRegister), (12 bytes).
+    Removing stm32f10x_bkp.o(i.BKP_SetRTCCalibrationValue), (20 bytes).
+    Removing stm32f10x_bkp.o(i.BKP_TamperPinCmd), (12 bytes).
+    Removing stm32f10x_bkp.o(i.BKP_TamperPinLevelConfig), (12 bytes).
+    Removing stm32f10x_bkp.o(i.BKP_WriteBackupRegister), (12 bytes).
+    Removing stm32f10x_can.o(i.CAN_CancelTransmit), (36 bytes).
+    Removing stm32f10x_can.o(i.CAN_ClearFlag), (48 bytes).
+    Removing stm32f10x_can.o(i.CAN_ClearITPendingBit), (120 bytes).
+    Removing stm32f10x_can.o(i.CAN_DBGFreeze), (20 bytes).
+    Removing stm32f10x_can.o(i.CAN_DeInit), (44 bytes).
+    Removing stm32f10x_can.o(i.CAN_FIFORelease), (22 bytes).
+    Removing stm32f10x_can.o(i.CAN_FilterInit), (216 bytes).
+    Removing stm32f10x_can.o(i.CAN_GetFlagStatus), (52 bytes).
+    Removing stm32f10x_can.o(i.CAN_GetITStatus), (188 bytes).
+    Removing stm32f10x_can.o(i.CAN_ITConfig), (16 bytes).
+    Removing stm32f10x_can.o(i.CAN_Init), (232 bytes).
+    Removing stm32f10x_can.o(i.CAN_MessagePending), (22 bytes).
+    Removing stm32f10x_can.o(i.CAN_Receive), (124 bytes).
+    Removing stm32f10x_can.o(i.CAN_SlaveStartBank), (44 bytes).
+    Removing stm32f10x_can.o(i.CAN_Sleep), (30 bytes).
+    Removing stm32f10x_can.o(i.CAN_StructInit), (32 bytes).
+    Removing stm32f10x_can.o(i.CAN_Transmit), (154 bytes).
+    Removing stm32f10x_can.o(i.CAN_TransmitStatus), (120 bytes).
+    Removing stm32f10x_can.o(i.CAN_WakeUp), (42 bytes).
+    Removing stm32f10x_can.o(i.CheckITStatus), (12 bytes).
+    Removing stm32f10x_cec.o(i.CEC_ClearFlag), (36 bytes).
+    Removing stm32f10x_cec.o(i.CEC_ClearITPendingBit), (36 bytes).
+    Removing stm32f10x_cec.o(i.CEC_Cmd), (32 bytes).
+    Removing stm32f10x_cec.o(i.CEC_DeInit), (24 bytes).
+    Removing stm32f10x_cec.o(i.CEC_EndOfMessageCmd), (12 bytes).
+    Removing stm32f10x_cec.o(i.CEC_GetFlagStatus), (36 bytes).
+    Removing stm32f10x_cec.o(i.CEC_GetITStatus), (32 bytes).
+    Removing stm32f10x_cec.o(i.CEC_ITConfig), (12 bytes).
+    Removing stm32f10x_cec.o(i.CEC_Init), (28 bytes).
+    Removing stm32f10x_cec.o(i.CEC_OwnAddressConfig), (12 bytes).
+    Removing stm32f10x_cec.o(i.CEC_ReceiveDataByte), (12 bytes).
+    Removing stm32f10x_cec.o(i.CEC_SendDataByte), (12 bytes).
+    Removing stm32f10x_cec.o(i.CEC_SetPrescaler), (12 bytes).
+    Removing stm32f10x_cec.o(i.CEC_StartOfMessage), (12 bytes).
+    Removing stm32f10x_crc.o(i.CRC_CalcBlockCRC), (28 bytes).
+    Removing stm32f10x_crc.o(i.CRC_CalcCRC), (12 bytes).
+    Removing stm32f10x_crc.o(i.CRC_GetCRC), (12 bytes).
+    Removing stm32f10x_crc.o(i.CRC_GetIDRegister), (12 bytes).
+    Removing stm32f10x_crc.o(i.CRC_ResetDR), (12 bytes).
+    Removing stm32f10x_crc.o(i.CRC_SetIDRegister), (12 bytes).
+    Removing stm32f10x_dac.o(i.DAC_Cmd), (28 bytes).
+    Removing stm32f10x_dac.o(i.DAC_DMACmd), (28 bytes).
+    Removing stm32f10x_dac.o(i.DAC_DeInit), (24 bytes).
+    Removing stm32f10x_dac.o(i.DAC_DualSoftwareTriggerCmd), (32 bytes).
+    Removing stm32f10x_dac.o(i.DAC_GetDataOutputValue), (16 bytes).
+    Removing stm32f10x_dac.o(i.DAC_Init), (56 bytes).
+    Removing stm32f10x_dac.o(i.DAC_SetChannel1Data), (12 bytes).
+    Removing stm32f10x_dac.o(i.DAC_SetChannel2Data), (12 bytes).
+    Removing stm32f10x_dac.o(i.DAC_SetDualChannelData), (28 bytes).
+    Removing stm32f10x_dac.o(i.DAC_SoftwareTriggerCmd), (32 bytes).
+    Removing stm32f10x_dac.o(i.DAC_StructInit), (12 bytes).
+    Removing stm32f10x_dac.o(i.DAC_WaveGenerationCmd), (28 bytes).
+    Removing stm32f10x_dbgmcu.o(i.DBGMCU_Config), (24 bytes).
+    Removing stm32f10x_dbgmcu.o(i.DBGMCU_GetDEVID), (16 bytes).
+    Removing stm32f10x_dbgmcu.o(i.DBGMCU_GetREVID), (12 bytes).
+    Removing stm32f10x_dma.o(i.DMA_ClearFlag), (20 bytes).
+    Removing stm32f10x_dma.o(i.DMA_ClearITPendingBit), (20 bytes).
+    Removing stm32f10x_dma.o(i.DMA_Cmd), (22 bytes).
+    Removing stm32f10x_dma.o(i.DMA_DeInit), (236 bytes).
+    Removing stm32f10x_dma.o(i.DMA_GetCurrDataCounter), (6 bytes).
+    Removing stm32f10x_dma.o(i.DMA_GetFlagStatus), (32 bytes).
+    Removing stm32f10x_dma.o(i.DMA_GetITStatus), (32 bytes).
+    Removing stm32f10x_dma.o(i.DMA_ITConfig), (16 bytes).
+    Removing stm32f10x_dma.o(i.DMA_Init), (58 bytes).
+    Removing stm32f10x_dma.o(i.DMA_SetCurrDataCounter), (4 bytes).
+    Removing stm32f10x_dma.o(i.DMA_StructInit), (26 bytes).
+    Removing stm32f10x_exti.o(i.EXTI_ClearFlag), (12 bytes).
+    Removing stm32f10x_exti.o(i.EXTI_ClearITPendingBit), (12 bytes).
+    Removing stm32f10x_exti.o(i.EXTI_DeInit), (28 bytes).
+    Removing stm32f10x_exti.o(i.EXTI_GenerateSWInterrupt), (16 bytes).
+    Removing stm32f10x_exti.o(i.EXTI_GetFlagStatus), (20 bytes).
+    Removing stm32f10x_exti.o(i.EXTI_GetITStatus), (32 bytes).
+    Removing stm32f10x_exti.o(i.EXTI_Init), (132 bytes).
+    Removing stm32f10x_exti.o(i.EXTI_StructInit), (14 bytes).
+    Removing stm32f10x_fsmc.o(i.FSMC_ClearFlag), (42 bytes).
+    Removing stm32f10x_fsmc.o(i.FSMC_ClearITPendingBit), (44 bytes).
+    Removing stm32f10x_fsmc.o(i.FSMC_GetECC), (18 bytes).
+    Removing stm32f10x_fsmc.o(i.FSMC_GetFlagStatus), (40 bytes).
+    Removing stm32f10x_fsmc.o(i.FSMC_GetITStatus), (48 bytes).
+    Removing stm32f10x_fsmc.o(i.FSMC_ITConfig), (80 bytes).
+    Removing stm32f10x_fsmc.o(i.FSMC_NANDCmd), (56 bytes).
+    Removing stm32f10x_fsmc.o(i.FSMC_NANDDeInit), (40 bytes).
+    Removing stm32f10x_fsmc.o(i.FSMC_NANDECCCmd), (56 bytes).
+    Removing stm32f10x_fsmc.o(i.FSMC_NANDInit), (100 bytes).
+    Removing stm32f10x_fsmc.o(i.FSMC_NANDStructInit), (54 bytes).
+    Removing stm32f10x_fsmc.o(i.FSMC_NORSRAMCmd), (32 bytes).
+    Removing stm32f10x_fsmc.o(i.FSMC_NORSRAMDeInit), (36 bytes).
+    Removing stm32f10x_fsmc.o(i.FSMC_NORSRAMInit), (192 bytes).
+    Removing stm32f10x_fsmc.o(i.FSMC_NORSRAMStructInit), (98 bytes).
+    Removing stm32f10x_fsmc.o(i.FSMC_PCCARDCmd), (32 bytes).
+    Removing stm32f10x_fsmc.o(i.FSMC_PCCARDDeInit), (28 bytes).
+    Removing stm32f10x_fsmc.o(i.FSMC_PCCARDInit), (112 bytes).
+    Removing stm32f10x_fsmc.o(i.FSMC_PCCARDStructInit), (60 bytes).
+    Removing stm32f10x_i2c.o(i.I2C_ARPCmd), (20 bytes).
+    Removing stm32f10x_i2c.o(i.I2C_AcknowledgeConfig), (20 bytes).
+    Removing stm32f10x_i2c.o(i.I2C_CalculatePEC), (20 bytes).
+    Removing stm32f10x_i2c.o(i.I2C_CheckEvent), (24 bytes).
+    Removing stm32f10x_i2c.o(i.I2C_ClearFlag), (6 bytes).
+    Removing stm32f10x_i2c.o(i.I2C_ClearITPendingBit), (6 bytes).
+    Removing stm32f10x_i2c.o(i.I2C_Cmd), (20 bytes).
+    Removing stm32f10x_i2c.o(i.I2C_DMACmd), (20 bytes).
+    Removing stm32f10x_i2c.o(i.I2C_DMALastTransferCmd), (20 bytes).
+    Removing stm32f10x_i2c.o(i.I2C_DeInit), (44 bytes).
+    Removing stm32f10x_i2c.o(i.I2C_DualAddressCmd), (20 bytes).
+    Removing stm32f10x_i2c.o(i.I2C_FastModeDutyCycleConfig), (22 bytes).
+    Removing stm32f10x_i2c.o(i.I2C_GeneralCallCmd), (20 bytes).
+    Removing stm32f10x_i2c.o(i.I2C_GenerateSTART), (20 bytes).
+    Removing stm32f10x_i2c.o(i.I2C_GenerateSTOP), (20 bytes).
+    Removing stm32f10x_i2c.o(i.I2C_GetFlagStatus), (30 bytes).
+    Removing stm32f10x_i2c.o(i.I2C_GetITStatus), (32 bytes).
+    Removing stm32f10x_i2c.o(i.I2C_GetLastEvent), (14 bytes).
+    Removing stm32f10x_i2c.o(i.I2C_GetPEC), (6 bytes).
+    Removing stm32f10x_i2c.o(i.I2C_ITConfig), (16 bytes).
+    Removing stm32f10x_i2c.o(i.I2C_Init), (184 bytes).
+    Removing stm32f10x_i2c.o(i.I2C_OwnAddress2Config), (16 bytes).
+    Removing stm32f10x_i2c.o(i.I2C_PECPositionConfig), (22 bytes).
+    Removing stm32f10x_i2c.o(i.I2C_ReadRegister), (4 bytes).
+    Removing stm32f10x_i2c.o(i.I2C_ReceiveData), (6 bytes).
+    Removing stm32f10x_i2c.o(i.I2C_SMBusAlertConfig), (22 bytes).
+    Removing stm32f10x_i2c.o(i.I2C_Send7bitAddress), (16 bytes).
+    Removing stm32f10x_i2c.o(i.I2C_SendData), (4 bytes).
+    Removing stm32f10x_i2c.o(i.I2C_SoftwareResetCmd), (20 bytes).
+    Removing stm32f10x_i2c.o(i.I2C_StretchClockCmd), (20 bytes).
+    Removing stm32f10x_i2c.o(i.I2C_StructInit), (28 bytes).
+    Removing stm32f10x_i2c.o(i.I2C_TransmitPEC), (20 bytes).
+    Removing stm32f10x_iwdg.o(i.IWDG_Enable), (16 bytes).
+    Removing stm32f10x_iwdg.o(i.IWDG_GetFlagStatus), (20 bytes).
+    Removing stm32f10x_iwdg.o(i.IWDG_ReloadCounter), (16 bytes).
+    Removing stm32f10x_iwdg.o(i.IWDG_SetPrescaler), (12 bytes).
+    Removing stm32f10x_iwdg.o(i.IWDG_SetReload), (12 bytes).
+    Removing stm32f10x_iwdg.o(i.IWDG_WriteAccessCmd), (12 bytes).
+    Removing stm32f10x_pwr.o(i.PWR_BackupAccessCmd), (12 bytes).
+    Removing stm32f10x_pwr.o(i.PWR_ClearFlag), (16 bytes).
+    Removing stm32f10x_pwr.o(i.PWR_DeInit), (24 bytes).
+    Removing stm32f10x_pwr.o(i.PWR_EnterSTANDBYMode), (40 bytes).
+    Removing stm32f10x_pwr.o(i.PWR_EnterSTOPMode), (60 bytes).
+    Removing stm32f10x_pwr.o(i.PWR_GetFlagStatus), (20 bytes).
+    Removing stm32f10x_pwr.o(i.PWR_PVDCmd), (12 bytes).
+    Removing stm32f10x_pwr.o(i.PWR_PVDLevelConfig), (20 bytes).
+    Removing stm32f10x_pwr.o(i.PWR_WakeUpPinCmd), (12 bytes).
+    Removing stm32f10x_rtc.o(i.RTC_ClearFlag), (16 bytes).
+    Removing stm32f10x_rtc.o(i.RTC_ClearITPendingBit), (16 bytes).
+    Removing stm32f10x_rtc.o(i.RTC_EnterConfigMode), (16 bytes).
+    Removing stm32f10x_rtc.o(i.RTC_ExitConfigMode), (16 bytes).
+    Removing stm32f10x_rtc.o(i.RTC_GetCounter), (16 bytes).
+    Removing stm32f10x_rtc.o(i.RTC_GetDivider), (20 bytes).
+    Removing stm32f10x_rtc.o(i.RTC_GetFlagStatus), (20 bytes).
+    Removing stm32f10x_rtc.o(i.RTC_GetITStatus), (32 bytes).
+    Removing stm32f10x_rtc.o(i.RTC_ITConfig), (28 bytes).
+    Removing stm32f10x_rtc.o(i.RTC_SetAlarm), (28 bytes).
+    Removing stm32f10x_rtc.o(i.RTC_SetCounter), (28 bytes).
+    Removing stm32f10x_rtc.o(i.RTC_SetPrescaler), (32 bytes).
+    Removing stm32f10x_rtc.o(i.RTC_WaitForLastTask), (20 bytes).
+    Removing stm32f10x_rtc.o(i.RTC_WaitForSynchro), (32 bytes).
+    Removing stm32f10x_sdio.o(i.SDIO_CEATAITCmd), (16 bytes).
+    Removing stm32f10x_sdio.o(i.SDIO_ClearFlag), (12 bytes).
+    Removing stm32f10x_sdio.o(i.SDIO_ClearITPendingBit), (12 bytes).
+    Removing stm32f10x_sdio.o(i.SDIO_ClockCmd), (12 bytes).
+    Removing stm32f10x_sdio.o(i.SDIO_CmdStructInit), (14 bytes).
+    Removing stm32f10x_sdio.o(i.SDIO_CommandCompletionCmd), (12 bytes).
+    Removing stm32f10x_sdio.o(i.SDIO_DMACmd), (12 bytes).
+    Removing stm32f10x_sdio.o(i.SDIO_DataConfig), (44 bytes).
+    Removing stm32f10x_sdio.o(i.SDIO_DataStructInit), (20 bytes).
+    Removing stm32f10x_sdio.o(i.SDIO_DeInit), (36 bytes).
+    Removing stm32f10x_sdio.o(i.SDIO_GetCommandResponse), (12 bytes).
+    Removing stm32f10x_sdio.o(i.SDIO_GetDataCounter), (12 bytes).
+    Removing stm32f10x_sdio.o(i.SDIO_GetFIFOCount), (12 bytes).
+    Removing stm32f10x_sdio.o(i.SDIO_GetFlagStatus), (20 bytes).
+    Removing stm32f10x_sdio.o(i.SDIO_GetITStatus), (20 bytes).
+    Removing stm32f10x_sdio.o(i.SDIO_GetPowerState), (16 bytes).
+    Removing stm32f10x_sdio.o(i.SDIO_GetResponse), (12 bytes).
+    Removing stm32f10x_sdio.o(i.SDIO_ITConfig), (24 bytes).
+    Removing stm32f10x_sdio.o(i.SDIO_Init), (44 bytes).
+    Removing stm32f10x_sdio.o(i.SDIO_ReadData), (12 bytes).
+    Removing stm32f10x_sdio.o(i.SDIO_SendCEATACmd), (12 bytes).
+    Removing stm32f10x_sdio.o(i.SDIO_SendCommand), (40 bytes).
+    Removing stm32f10x_sdio.o(i.SDIO_SendSDIOSuspendCmd), (12 bytes).
+    Removing stm32f10x_sdio.o(i.SDIO_SetPowerState), (24 bytes).
+    Removing stm32f10x_sdio.o(i.SDIO_SetSDIOOperation), (12 bytes).
+    Removing stm32f10x_sdio.o(i.SDIO_SetSDIOReadWaitMode), (12 bytes).
+    Removing stm32f10x_sdio.o(i.SDIO_StartSDIOReadWait), (12 bytes).
+    Removing stm32f10x_sdio.o(i.SDIO_StopSDIOReadWait), (12 bytes).
+    Removing stm32f10x_sdio.o(i.SDIO_StructInit), (16 bytes).
+    Removing stm32f10x_sdio.o(i.SDIO_WriteData), (12 bytes).
+    Removing stm32f10x_spi.o(i.I2S_Cmd), (20 bytes).
+    Removing stm32f10x_spi.o(i.I2S_Init), (224 bytes).
+    Removing stm32f10x_spi.o(i.I2S_StructInit), (18 bytes).
+    Removing stm32f10x_spi.o(i.SPI_BiDirectionalLineConfig), (22 bytes).
+    Removing stm32f10x_spi.o(i.SPI_CalculateCRC), (20 bytes).
+    Removing stm32f10x_spi.o(i.SPI_Cmd), (20 bytes).
+    Removing stm32f10x_spi.o(i.SPI_DataSizeConfig), (16 bytes).
+    Removing stm32f10x_spi.o(i.SPI_GetCRC), (12 bytes).
+    Removing stm32f10x_spi.o(i.SPI_GetCRCPolynomial), (4 bytes).
+    Removing stm32f10x_spi.o(i.SPI_I2S_ClearFlag), (6 bytes).
+    Removing stm32f10x_spi.o(i.SPI_I2S_ClearITPendingBit), (14 bytes).
+    Removing stm32f10x_spi.o(i.SPI_I2S_DMACmd), (16 bytes).
+    Removing stm32f10x_spi.o(i.SPI_I2S_DeInit), (84 bytes).
+    Removing stm32f10x_spi.o(i.SPI_I2S_GetFlagStatus), (14 bytes).
+    Removing stm32f10x_spi.o(i.SPI_I2S_GetITStatus), (42 bytes).
+    Removing stm32f10x_spi.o(i.SPI_I2S_ITConfig), (24 bytes).
+    Removing stm32f10x_spi.o(i.SPI_I2S_ReceiveData), (4 bytes).
+    Removing stm32f10x_spi.o(i.SPI_I2S_SendData), (4 bytes).
+    Removing stm32f10x_spi.o(i.SPI_Init), (56 bytes).
+    Removing stm32f10x_spi.o(i.SPI_NSSInternalSoftwareConfig), (24 bytes).
+    Removing stm32f10x_spi.o(i.SPI_SSOutputCmd), (20 bytes).
+    Removing stm32f10x_spi.o(i.SPI_StructInit), (24 bytes).
+    Removing stm32f10x_spi.o(i.SPI_TransmitCRC), (10 bytes).
+    Removing stm32f10x_tim.o(i.TI1_Config), (104 bytes).
+    Removing stm32f10x_tim.o(i.TI2_Config), (120 bytes).
+    Removing stm32f10x_tim.o(i.TIM_ARRPreloadConfig), (20 bytes).
+    Removing stm32f10x_tim.o(i.TIM_BDTRConfig), (34 bytes).
+    Removing stm32f10x_tim.o(i.TIM_BDTRStructInit), (18 bytes).
+    Removing stm32f10x_tim.o(i.TIM_CCPreloadControl), (20 bytes).
+    Removing stm32f10x_tim.o(i.TIM_CCxCmd), (22 bytes).
+    Removing stm32f10x_tim.o(i.TIM_CCxNCmd), (22 bytes).
+    Removing stm32f10x_tim.o(i.TIM_ClearFlag), (6 bytes).
+    Removing stm32f10x_tim.o(i.TIM_ClearITPendingBit), (6 bytes).
+    Removing stm32f10x_tim.o(i.TIM_ClearOC1Ref), (12 bytes).
+    Removing stm32f10x_tim.o(i.TIM_ClearOC2Ref), (14 bytes).
+    Removing stm32f10x_tim.o(i.TIM_ClearOC3Ref), (12 bytes).
+    Removing stm32f10x_tim.o(i.TIM_ClearOC4Ref), (14 bytes).
+    Removing stm32f10x_tim.o(i.TIM_Cmd), (20 bytes).
+    Removing stm32f10x_tim.o(i.TIM_CounterModeConfig), (12 bytes).
+    Removing stm32f10x_tim.o(i.TIM_CtrlPWMOutputs), (22 bytes).
+    Removing stm32f10x_tim.o(i.TIM_DMACmd), (16 bytes).
+    Removing stm32f10x_tim.o(i.TIM_DMAConfig), (8 bytes).
+    Removing stm32f10x_tim.o(i.TIM_DeInit), (368 bytes).
+    Removing stm32f10x_tim.o(i.TIM_ETRClockMode1Config), (18 bytes).
+    Removing stm32f10x_tim.o(i.TIM_ETRClockMode2Config), (18 bytes).
+    Removing stm32f10x_tim.o(i.TIM_ETRConfig), (18 bytes).
+    Removing stm32f10x_tim.o(i.TIM_EncoderInterfaceConfig), (44 bytes).
+    Removing stm32f10x_tim.o(i.TIM_ForcedOC1Config), (12 bytes).
+    Removing stm32f10x_tim.o(i.TIM_ForcedOC2Config), (14 bytes).
+    Removing stm32f10x_tim.o(i.TIM_ForcedOC3Config), (12 bytes).
+    Removing stm32f10x_tim.o(i.TIM_ForcedOC4Config), (14 bytes).
+    Removing stm32f10x_tim.o(i.TIM_GenerateEvent), (4 bytes).
+    Removing stm32f10x_tim.o(i.TIM_GetCapture1), (4 bytes).
+    Removing stm32f10x_tim.o(i.TIM_GetCapture2), (4 bytes).
+    Removing stm32f10x_tim.o(i.TIM_GetCapture3), (4 bytes).
+    Removing stm32f10x_tim.o(i.TIM_GetCapture4), (6 bytes).
+    Removing stm32f10x_tim.o(i.TIM_GetCounter), (4 bytes).
+    Removing stm32f10x_tim.o(i.TIM_GetFlagStatus), (14 bytes).
+    Removing stm32f10x_tim.o(i.TIM_GetITStatus), (24 bytes).
+    Removing stm32f10x_tim.o(i.TIM_GetPrescaler), (4 bytes).
+    Removing stm32f10x_tim.o(i.TIM_ICInit), (296 bytes).
+    Removing stm32f10x_tim.o(i.TIM_ICStructInit), (16 bytes).
+    Removing stm32f10x_tim.o(i.TIM_ITConfig), (16 bytes).
+    Removing stm32f10x_tim.o(i.TIM_ITRxExternalClockConfig), (20 bytes).
+    Removing stm32f10x_tim.o(i.TIM_InternalClockConfig), (10 bytes).
+    Removing stm32f10x_tim.o(i.TIM_OC1FastConfig), (12 bytes).
+    Removing stm32f10x_tim.o(i.TIM_OC1Init), (128 bytes).
+    Removing stm32f10x_tim.o(i.TIM_OC1NPolarityConfig), (12 bytes).
+    Removing stm32f10x_tim.o(i.TIM_OC1PolarityConfig), (12 bytes).
+    Removing stm32f10x_tim.o(i.TIM_OC1PreloadConfig), (12 bytes).
+    Removing stm32f10x_tim.o(i.TIM_OC2FastConfig), (14 bytes).
+    Removing stm32f10x_tim.o(i.TIM_OC2Init), (124 bytes).
+    Removing stm32f10x_tim.o(i.TIM_OC2NPolarityConfig), (14 bytes).
+    Removing stm32f10x_tim.o(i.TIM_OC2PolarityConfig), (14 bytes).
+    Removing stm32f10x_tim.o(i.TIM_OC2PreloadConfig), (14 bytes).
+    Removing stm32f10x_tim.o(i.TIM_OC3FastConfig), (12 bytes).
+    Removing stm32f10x_tim.o(i.TIM_OC3Init), (120 bytes).
+    Removing stm32f10x_tim.o(i.TIM_OC3NPolarityConfig), (14 bytes).
+    Removing stm32f10x_tim.o(i.TIM_OC3PolarityConfig), (14 bytes).
+    Removing stm32f10x_tim.o(i.TIM_OC3PreloadConfig), (12 bytes).
+    Removing stm32f10x_tim.o(i.TIM_OC4FastConfig), (14 bytes).
+    Removing stm32f10x_tim.o(i.TIM_OC4Init), (96 bytes).
+    Removing stm32f10x_tim.o(i.TIM_OC4PolarityConfig), (14 bytes).
+    Removing stm32f10x_tim.o(i.TIM_OC4PreloadConfig), (14 bytes).
+    Removing stm32f10x_tim.o(i.TIM_OCStructInit), (20 bytes).
+    Removing stm32f10x_tim.o(i.TIM_PWMIConfig), (108 bytes).
+    Removing stm32f10x_tim.o(i.TIM_PrescalerConfig), (6 bytes).
+    Removing stm32f10x_tim.o(i.TIM_SelectCCDMA), (20 bytes).
+    Removing stm32f10x_tim.o(i.TIM_SelectCOM), (20 bytes).
+    Removing stm32f10x_tim.o(i.TIM_SelectHallSensor), (20 bytes).
+    Removing stm32f10x_tim.o(i.TIM_SelectInputTrigger), (12 bytes).
+    Removing stm32f10x_tim.o(i.TIM_SelectMasterSlaveMode), (16 bytes).
+    Removing stm32f10x_tim.o(i.TIM_SelectOCxM), (66 bytes).
+    Removing stm32f10x_tim.o(i.TIM_SelectOnePulseMode), (16 bytes).
+    Removing stm32f10x_tim.o(i.TIM_SelectOutputTrigger), (16 bytes).
+    Removing stm32f10x_tim.o(i.TIM_SelectSlaveMode), (16 bytes).
+    Removing stm32f10x_tim.o(i.TIM_SetAutoreload), (4 bytes).
+    Removing stm32f10x_tim.o(i.TIM_SetClockDivision), (16 bytes).
+    Removing stm32f10x_tim.o(i.TIM_SetCompare1), (4 bytes).
+    Removing stm32f10x_tim.o(i.TIM_SetCompare2), (4 bytes).
+    Removing stm32f10x_tim.o(i.TIM_SetCompare3), (4 bytes).
+    Removing stm32f10x_tim.o(i.TIM_SetCompare4), (6 bytes).
+    Removing stm32f10x_tim.o(i.TIM_SetCounter), (4 bytes).
+    Removing stm32f10x_tim.o(i.TIM_SetIC1Prescaler), (16 bytes).
+    Removing stm32f10x_tim.o(i.TIM_SetIC2Prescaler), (18 bytes).
+    Removing stm32f10x_tim.o(i.TIM_SetIC3Prescaler), (16 bytes).
+    Removing stm32f10x_tim.o(i.TIM_SetIC4Prescaler), (18 bytes).
+    Removing stm32f10x_tim.o(i.TIM_TIxExternalClockConfig), (46 bytes).
+    Removing stm32f10x_tim.o(i.TIM_TimeBaseInit), (156 bytes).
+    Removing stm32f10x_tim.o(i.TIM_TimeBaseStructInit), (18 bytes).
+    Removing stm32f10x_tim.o(i.TIM_UpdateDisableConfig), (20 bytes).
+    Removing stm32f10x_tim.o(i.TIM_UpdateRequestConfig), (20 bytes).
+    Removing stm32f10x_usart.o(i.USART_ClearFlag), (6 bytes).
+    Removing stm32f10x_usart.o(i.USART_ClearITPendingBit), (12 bytes).
+    Removing stm32f10x_usart.o(i.USART_ClockInit), (30 bytes).
+    Removing stm32f10x_usart.o(i.USART_ClockStructInit), (12 bytes).
+    Removing stm32f10x_usart.o(i.USART_Cmd), (20 bytes).
+    Removing stm32f10x_usart.o(i.USART_DMACmd), (16 bytes).
+    Removing stm32f10x_usart.o(i.USART_DeInit), (116 bytes).
+    Removing stm32f10x_usart.o(i.USART_GetFlagStatus), (14 bytes).
+    Removing stm32f10x_usart.o(i.USART_GetITStatus), (62 bytes).
+    Removing stm32f10x_usart.o(i.USART_HalfDuplexCmd), (20 bytes).
+    Removing stm32f10x_usart.o(i.USART_ITConfig), (48 bytes).
+    Removing stm32f10x_usart.o(i.USART_Init), (180 bytes).
+    Removing stm32f10x_usart.o(i.USART_IrDACmd), (20 bytes).
+    Removing stm32f10x_usart.o(i.USART_IrDAConfig), (16 bytes).
+    Removing stm32f10x_usart.o(i.USART_LINBreakDetectLengthConfig), (16 bytes).
+    Removing stm32f10x_usart.o(i.USART_LINCmd), (20 bytes).
+    Removing stm32f10x_usart.o(i.USART_OneBitMethodCmd), (20 bytes).
+    Removing stm32f10x_usart.o(i.USART_OverSampling8Cmd), (20 bytes).
+    Removing stm32f10x_usart.o(i.USART_ReceiveData), (8 bytes).
+    Removing stm32f10x_usart.o(i.USART_ReceiverWakeUpCmd), (20 bytes).
+    Removing stm32f10x_usart.o(i.USART_SendBreak), (10 bytes).
+    Removing stm32f10x_usart.o(i.USART_SendData), (8 bytes).
+    Removing stm32f10x_usart.o(i.USART_SetAddress), (16 bytes).
+    Removing stm32f10x_usart.o(i.USART_SetGuardTime), (16 bytes).
+    Removing stm32f10x_usart.o(i.USART_SetPrescaler), (16 bytes).
+    Removing stm32f10x_usart.o(i.USART_SmartCardCmd), (20 bytes).
+    Removing stm32f10x_usart.o(i.USART_SmartCardNACKCmd), (20 bytes).
+    Removing stm32f10x_usart.o(i.USART_StructInit), (22 bytes).
+    Removing stm32f10x_usart.o(i.USART_WakeUpConfig), (16 bytes).
+    Removing stm32f10x_wwdg.o(i.WWDG_ClearFlag), (12 bytes).
+    Removing stm32f10x_wwdg.o(i.WWDG_DeInit), (24 bytes).
+    Removing stm32f10x_wwdg.o(i.WWDG_Enable), (16 bytes).
+    Removing stm32f10x_wwdg.o(i.WWDG_EnableIT), (12 bytes).
+    Removing stm32f10x_wwdg.o(i.WWDG_GetFlagStatus), (12 bytes).
+    Removing stm32f10x_wwdg.o(i.WWDG_SetCounter), (16 bytes).
+    Removing stm32f10x_wwdg.o(i.WWDG_SetPrescaler), (20 bytes).
+    Removing stm32f10x_wwdg.o(i.WWDG_SetWindowValue), (24 bytes).
+    Removing stm32_eth.o(i.ETH_BackPressureActivationCmd), (28 bytes).
+    Removing stm32_eth.o(i.ETH_DMAClearFlag), (12 bytes).
+    Removing stm32_eth.o(i.ETH_DMAClearITPendingBit), (12 bytes).
+    Removing stm32_eth.o(i.ETH_DMAITConfig), (24 bytes).
+    Removing stm32_eth.o(i.ETH_DMAPTPRxDescChainInit), (108 bytes).
+    Removing stm32_eth.o(i.ETH_DMAPTPTxDescChainInit), (96 bytes).
+    Removing stm32_eth.o(i.ETH_DMAReceptionCmd), (28 bytes).
+    Removing stm32_eth.o(i.ETH_DMARxDescChainInit), (76 bytes).
+    Removing stm32_eth.o(i.ETH_DMARxDescEndOfRingCmd), (18 bytes).
+    Removing stm32_eth.o(i.ETH_DMARxDescReceiveITConfig), (18 bytes).
+    Removing stm32_eth.o(i.ETH_DMARxDescRingInit), (88 bytes).
+    Removing stm32_eth.o(i.ETH_DMARxDescSecondAddressChainedCmd), (18 bytes).
+    Removing stm32_eth.o(i.ETH_DMATransmissionCmd), (28 bytes).
+    Removing stm32_eth.o(i.ETH_DMATxDescBufferSizeConfig), (12 bytes).
+    Removing stm32_eth.o(i.ETH_DMATxDescCRCCmd), (18 bytes).
+    Removing stm32_eth.o(i.ETH_DMATxDescChainInit), (72 bytes).
+    Removing stm32_eth.o(i.ETH_DMATxDescChecksumInsertionConfig), (8 bytes).
+    Removing stm32_eth.o(i.ETH_DMATxDescEndOfRingCmd), (18 bytes).
+    Removing stm32_eth.o(i.ETH_DMATxDescFrameSegmentConfig), (8 bytes).
+    Removing stm32_eth.o(i.ETH_DMATxDescRingInit), (68 bytes).
+    Removing stm32_eth.o(i.ETH_DMATxDescSecondAddressChainedCmd), (18 bytes).
+    Removing stm32_eth.o(i.ETH_DMATxDescShortFramePaddingCmd), (18 bytes).
+    Removing stm32_eth.o(i.ETH_DMATxDescTimeStampCmd), (18 bytes).
+    Removing stm32_eth.o(i.ETH_DMATxDescTransmitITConfig), (18 bytes).
+    Removing stm32_eth.o(i.ETH_DeInit), (24 bytes).
+    Removing stm32_eth.o(i.ETH_Delay), (10 bytes).
+    Removing stm32_eth.o(i.ETH_DropRxPkt), (52 bytes).
+    Removing stm32_eth.o(i.ETH_EnablePTPTimeStampAddend), (16 bytes).
+    Removing stm32_eth.o(i.ETH_EnablePTPTimeStampInterruptTrigger), (16 bytes).
+    Removing stm32_eth.o(i.ETH_EnablePTPTimeStampUpdate), (16 bytes).
+    Removing stm32_eth.o(i.ETH_FlushTransmitFIFO), (16 bytes).
+    Removing stm32_eth.o(i.ETH_GetBufferUnavailableMissedFrameCounter), (12 bytes).
+    Removing stm32_eth.o(i.ETH_GetCurrentRxBufferAddress), (12 bytes).
+    Removing stm32_eth.o(i.ETH_GetCurrentRxDescStartAddress), (12 bytes).
+    Removing stm32_eth.o(i.ETH_GetCurrentTxBufferAddress), (12 bytes).
+    Removing stm32_eth.o(i.ETH_GetCurrentTxDescStartAddress), (12 bytes).
+    Removing stm32_eth.o(i.ETH_GetDMAFlagStatus), (20 bytes).
+    Removing stm32_eth.o(i.ETH_GetDMAITStatus), (20 bytes).
+    Removing stm32_eth.o(i.ETH_GetDMAOverflowStatus), (20 bytes).
+    Removing stm32_eth.o(i.ETH_GetDMARxDescBufferSize), (16 bytes).
+    Removing stm32_eth.o(i.ETH_GetDMARxDescFlagStatus), (14 bytes).
+    Removing stm32_eth.o(i.ETH_GetDMARxDescFrameLength), (8 bytes).
+    Removing stm32_eth.o(i.ETH_GetDMATxDescCollisionCount), (8 bytes).
+    Removing stm32_eth.o(i.ETH_GetDMATxDescFlagStatus), (14 bytes).
+    Removing stm32_eth.o(i.ETH_GetFlowControlBusyStatus), (20 bytes).
+    Removing stm32_eth.o(i.ETH_GetFlushTransmitFIFOStatus), (20 bytes).
+    Removing stm32_eth.o(i.ETH_GetMACAddress), (36 bytes).
+    Removing stm32_eth.o(i.ETH_GetMACFlagStatus), (20 bytes).
+    Removing stm32_eth.o(i.ETH_GetMACITStatus), (20 bytes).
+    Removing stm32_eth.o(i.ETH_GetMMCITStatus), (40 bytes).
+    Removing stm32_eth.o(i.ETH_GetMMCRegister), (12 bytes).
+    Removing stm32_eth.o(i.ETH_GetPMTFlagStatus), (20 bytes).
+    Removing stm32_eth.o(i.ETH_GetPTPFlagStatus), (20 bytes).
+    Removing stm32_eth.o(i.ETH_GetPTPRegister), (12 bytes).
+    Removing stm32_eth.o(i.ETH_GetReceiveProcessState), (16 bytes).
+    Removing stm32_eth.o(i.ETH_GetRxOverflowMissedFrameCounter), (16 bytes).
+    Removing stm32_eth.o(i.ETH_GetRxPktSize), (32 bytes).
+    Removing stm32_eth.o(i.ETH_GetSoftwareResetStatus), (20 bytes).
+    Removing stm32_eth.o(i.ETH_GetTransmitProcessState), (16 bytes).
+    Removing stm32_eth.o(i.ETH_GlobalUnicastWakeUpCmd), (28 bytes).
+    Removing stm32_eth.o(i.ETH_HandlePTPRxPkt), (160 bytes).
+    Removing stm32_eth.o(i.ETH_HandlePTPTxPkt), (204 bytes).
+    Removing stm32_eth.o(i.ETH_HandleRxPkt), (124 bytes).
+    Removing stm32_eth.o(i.ETH_HandleTxPkt), (108 bytes).
+    Removing stm32_eth.o(i.ETH_Init), (516 bytes).
+    Removing stm32_eth.o(i.ETH_InitializePTPTimeStamp), (16 bytes).
+    Removing stm32_eth.o(i.ETH_InitiatePauseControlFrame), (16 bytes).
+    Removing stm32_eth.o(i.ETH_MACAddressConfig), (28 bytes).
+    Removing stm32_eth.o(i.ETH_MACAddressFilterConfig), (28 bytes).
+    Removing stm32_eth.o(i.ETH_MACAddressMaskBytesFilterConfig), (24 bytes).
+    Removing stm32_eth.o(i.ETH_MACAddressPerfectFilterCmd), (28 bytes).
+    Removing stm32_eth.o(i.ETH_MACITConfig), (24 bytes).
+    Removing stm32_eth.o(i.ETH_MACReceptionCmd), (28 bytes).
+    Removing stm32_eth.o(i.ETH_MACTransmissionCmd), (28 bytes).
+    Removing stm32_eth.o(i.ETH_MMCCounterFreezeCmd), (32 bytes).
+    Removing stm32_eth.o(i.ETH_MMCCounterRolloverCmd), (32 bytes).
+    Removing stm32_eth.o(i.ETH_MMCCountersReset), (16 bytes).
+    Removing stm32_eth.o(i.ETH_MMCITConfig), (56 bytes).
+    Removing stm32_eth.o(i.ETH_MMCResetOnReadCmd), (32 bytes).
+    Removing stm32_eth.o(i.ETH_MagicPacketDetectionCmd), (28 bytes).
+    Removing stm32_eth.o(i.ETH_PHYLoopBackCmd), (40 bytes).
+    Removing stm32_eth.o(i.ETH_PTPTimeStampCmd), (32 bytes).
+    Removing stm32_eth.o(i.ETH_PTPUpdateMethodConfig), (32 bytes).
+    Removing stm32_eth.o(i.ETH_PowerDownCmd), (28 bytes).
+    Removing stm32_eth.o(i.ETH_ReadPHYRegister), (80 bytes).
+    Removing stm32_eth.o(i.ETH_ResetWakeUpFrameFilterRegisterPointer), (16 bytes).
+    Removing stm32_eth.o(i.ETH_ResumeDMAReception), (12 bytes).
+    Removing stm32_eth.o(i.ETH_ResumeDMATransmission), (12 bytes).
+    Removing stm32_eth.o(i.ETH_SetDMARxDescOwnBit), (10 bytes).
+    Removing stm32_eth.o(i.ETH_SetDMATxDescOwnBit), (10 bytes).
+    Removing stm32_eth.o(i.ETH_SetPTPSubSecondIncrement), (12 bytes).
+    Removing stm32_eth.o(i.ETH_SetPTPTargetTime), (12 bytes).
+    Removing stm32_eth.o(i.ETH_SetPTPTimeStampAddend), (12 bytes).
+    Removing stm32_eth.o(i.ETH_SetPTPTimeStampUpdate), (16 bytes).
+    Removing stm32_eth.o(i.ETH_SetWakeUpFrameFilterRegister), (24 bytes).
+    Removing stm32_eth.o(i.ETH_SoftwareReset), (16 bytes).
+    Removing stm32_eth.o(i.ETH_Start), (34 bytes).
+    Removing stm32_eth.o(i.ETH_StructInit), (124 bytes).
+    Removing stm32_eth.o(i.ETH_WakeUpFrameDetectionCmd), (28 bytes).
+    Removing stm32_eth.o(i.ETH_WritePHYRegister), (76 bytes).
+    Removing stm32_eth.o(.data), (16 bytes).
+    Removing core_cm3.o(.emb_text), (32 bytes).
+    Removing system_stm32f10x.o(i.SystemCoreClockUpdate), (160 bytes).
+    Removing startup_stm32f10x_cl.o(HEAP), (1024 bytes).
+    Removing os_dbg.o(.constdata), (112 bytes).
+    Removing os_dbg.o(.constdata), (2 bytes).
+    Removing os_cpu_c.o(i.OSTaskDelHook), (4 bytes).
+    Removing os_cpu_c.o(i.OS_CPU_SysTickClkFreq), (16 bytes).
+    Removing os_cpu_c.o(i.OS_CPU_SysTickHandler), (36 bytes).
+    Removing os_core.o(i.OSEventNameGet), (92 bytes).
+    Removing os_core.o(i.OSEventPendMulti), (460 bytes).
+    Removing os_core.o(i.OSIntEnter), (24 bytes).
+    Removing os_core.o(i.OSVersion), (6 bytes).
+    Removing os_core.o(i.OS_Dummy), (2 bytes).
+    Removing os_core.o(i.OS_EventTaskWaitMulti), (100 bytes).
+    Removing os_core.o(i.OS_MemCopy), (24 bytes).
+    Removing os_core.o(i.OS_StrLen), (20 bytes).
+    Removing os_flag.o(i.OSFlagAccept), (168 bytes).
+    Removing os_flag.o(i.OSFlagCreate), (80 bytes).
+    Removing os_flag.o(i.OSFlagDel), (200 bytes).
+    Removing os_flag.o(i.OSFlagNameGet), (92 bytes).
+    Removing os_flag.o(i.OSFlagNameSet), (68 bytes).
+    Removing os_flag.o(i.OSFlagPend), (404 bytes).
+    Removing os_flag.o(i.OSFlagPendGetFlagsRdy), (24 bytes).
+    Removing os_flag.o(i.OSFlagPost), (192 bytes).
+    Removing os_flag.o(i.OSFlagQuery), (44 bytes).
+    Removing os_flag.o(i.OS_FlagBlock), (108 bytes).
+    Removing os_flag.o(i.OS_FlagTaskRdy), (88 bytes).
+    Removing os_flag.o(i.OS_FlagUnlink), (32 bytes).
+    Removing os_mbox.o(i.OSMboxAccept), (34 bytes).
+    Removing os_mbox.o(i.OSMboxCreate), (76 bytes).
+    Removing os_mbox.o(i.OSMboxDel), (208 bytes).
+    Removing os_mbox.o(i.OSMboxPend), (216 bytes).
+    Removing os_mbox.o(i.OSMboxPendAbort), (116 bytes).
+    Removing os_mbox.o(i.OSMboxPost), (88 bytes).
+    Removing os_mbox.o(i.OSMboxPostOpt), (122 bytes).
+    Removing os_mbox.o(i.OSMboxQuery), (84 bytes).
+    Removing os_mem.o(i.OSMemCreate), (124 bytes).
+    Removing os_mem.o(i.OSMemGet), (62 bytes).
+    Removing os_mem.o(i.OSMemNameGet), (72 bytes).
+    Removing os_mem.o(i.OSMemNameSet), (52 bytes).
+    Removing os_mem.o(i.OSMemPut), (58 bytes).
+    Removing os_mem.o(i.OSMemQuery), (58 bytes).
+    Removing os_mutex.o(i.OSMutexAccept), (132 bytes).
+    Removing os_mutex.o(i.OSMutexCreate), (152 bytes).
+    Removing os_mutex.o(i.OSMutexDel), (260 bytes).
+    Removing os_mutex.o(i.OSMutexPend), (472 bytes).
+    Removing os_mutex.o(i.OSMutexPost), (180 bytes).
+    Removing os_mutex.o(i.OSMutexQuery), (108 bytes).
+    Removing os_mutex.o(i.OSMutex_RdyAtPrio), (116 bytes).
+    Removing os_q.o(i.OSQAccept), (84 bytes).
+    Removing os_q.o(i.OSQCreate), (136 bytes).
+    Removing os_q.o(i.OSQDel), (244 bytes).
+    Removing os_q.o(i.OSQFlush), (48 bytes).
+    Removing os_q.o(i.OSQPend), (224 bytes).
+    Removing os_q.o(i.OSQPendAbort), (116 bytes).
+    Removing os_q.o(i.OSQPost), (112 bytes).
+    Removing os_q.o(i.OSQPostFront), (110 bytes).
+    Removing os_q.o(i.OSQPostOpt), (170 bytes).
+    Removing os_q.o(i.OSQQuery), (100 bytes).
+    Removing os_sem.o(i.OSSemAccept), (36 bytes).
+    Removing os_sem.o(i.OSSemDel), (208 bytes).
+    Removing os_sem.o(i.OSSemPendAbort), (116 bytes).
+    Removing os_sem.o(i.OSSemQuery), (84 bytes).
+    Removing os_sem.o(i.OSSemSet), (58 bytes).
+    Removing os_task.o(i.OSTaskChangePrio), (360 bytes).
+    Removing os_task.o(i.OSTaskCreate), (144 bytes).
+    Removing os_task.o(i.OSTaskDel), (336 bytes).
+    Removing os_task.o(i.OSTaskDelReq), (104 bytes).
+    Removing os_task.o(i.OSTaskNameGet), (124 bytes).
+    Removing os_task.o(i.OSTaskQuery), (104 bytes).
+    Removing os_task.o(i.OSTaskRegGet), (76 bytes).
+    Removing os_task.o(i.OSTaskRegSet), (72 bytes).
+    Removing os_task.o(i.OSTaskResume), (160 bytes).
+    Removing os_task.o(i.OS_TaskReturn), (24 bytes).
+    Removing os_time.o(i.OSTimeDlyResume), (160 bytes).
+    Removing os_time.o(i.OSTimeGet), (24 bytes).
+    Removing os_time.o(i.OSTimeSet), (24 bytes).
+    Removing os_tmr.o(i.OSTmrCreate), (156 bytes).
+    Removing os_tmr.o(i.OSTmrDel), (104 bytes).
+    Removing os_tmr.o(i.OSTmrNameGet), (112 bytes).
+    Removing os_tmr.o(i.OSTmrRemainGet), (140 bytes).
+    Removing os_tmr.o(i.OSTmrStart), (108 bytes).
+    Removing os_tmr.o(i.OSTmrStateGet), (80 bytes).
+    Removing os_tmr.o(i.OSTmrStop), (160 bytes).
+    Removing os_tmr.o(i.OSTmr_Free), (68 bytes).
+    Removing os_apphooks.o(i.App_TaskDelHook), (2 bytes).
+    Removing os_apphooks.o(i.App_TaskReturnHook), (2 bytes).
+    Removing os_apphooks.o(i.OSTaskReturnHook), (2 bytes).
+    Removing cpu_c.o(i.CPU_BitBandClr), (44 bytes).
+    Removing cpu_c.o(i.CPU_BitBandSet), (44 bytes).
+    Removing cpu_c.o(i.CPU_IntSrcDis), (152 bytes).
+    Removing cpu_c.o(i.CPU_IntSrcEn), (152 bytes).
+    Removing cpu_c.o(i.CPU_IntSrcPrioGet), (216 bytes).
+    Removing cpu_c.o(i.CPU_IntSrcPrioSet), (250 bytes).
+    Removing lib_mem.o(i.Mem_Clr), (8 bytes).
+    Removing lib_mem.o(i.Mem_Cmp), (108 bytes).
+    Removing lib_mem.o(i.Mem_Init), (2 bytes).
+    Removing lib_mem.o(i.Mem_Set), (76 bytes).
+    Removing lib_str.o(i.Str_Cat), (56 bytes).
+    Removing lib_str.o(i.Str_Cat_N), (64 bytes).
+    Removing lib_str.o(i.Str_Char), (32 bytes).
+    Removing lib_str.o(i.Str_Char_Last), (38 bytes).
+    Removing lib_str.o(i.Str_Char_N), (44 bytes).
+    Removing lib_str.o(i.Str_Cmp), (80 bytes).
+    Removing lib_str.o(i.Str_Cmp_N), (92 bytes).
+    Removing lib_str.o(i.Str_Copy), (44 bytes).
+    Removing lib_str.o(i.Str_Copy_N), (52 bytes).
+    Removing lib_str.o(i.Str_Len), (20 bytes).
+    Removing lib_str.o(i.Str_Str), (86 bytes).
+    Removing lib_mem_a.o(.text), (544 bytes).
+    Removing glcd.o(i.LCD_WriteIndex), (44 bytes).
+    Removing glcd.o(i.LCD_ReadData), (76 bytes).
+    Removing glcd.o(i.LCD_WriteData), (36 bytes).
+    Removing glcd.o(i.LCD_WriteReg), (40 bytes).
+    Removing glcd.o(i.LCD_ReadReg), (36 bytes).
+
+706 unused section(s) (total 256799 bytes) removed from the image.
+
+==============================================================================
+
+Image Symbol Table
+
+    Local Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
+    ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpyb.o ABSOLUTE
+    ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpya.o ABSOLUTE
+    ..\Libraries\CMSIS\CM3\CoreSupport\core_cm3.c 0x00000000   Number         0  core_cm3.o ABSOLUTE
+    ..\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x\startup\arm\startup_stm32f10x_cl.s 0x00000000   Number         0  startup_stm32f10x_cl.o ABSOLUTE
+    ..\Libraries\STM32F10x_StdPeriph_Driver\src\misc.c 0x00000000   Number         0  misc.o ABSOLUTE
+    ..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_adc.c 0x00000000   Number         0  stm32f10x_adc.o ABSOLUTE
+    ..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_bkp.c 0x00000000   Number         0  stm32f10x_bkp.o ABSOLUTE
+    ..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_can.c 0x00000000   Number         0  stm32f10x_can.o ABSOLUTE
+    ..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_cec.c 0x00000000   Number         0  stm32f10x_cec.o ABSOLUTE
+    ..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_crc.c 0x00000000   Number         0  stm32f10x_crc.o ABSOLUTE
+    ..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_dac.c 0x00000000   Number         0  stm32f10x_dac.o ABSOLUTE
+    ..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_dbgmcu.c 0x00000000   Number         0  stm32f10x_dbgmcu.o ABSOLUTE
+    ..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_dma.c 0x00000000   Number         0  stm32f10x_dma.o ABSOLUTE
+    ..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_exti.c 0x00000000   Number         0  stm32f10x_exti.o ABSOLUTE
+    ..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_flash.c 0x00000000   Number         0  stm32f10x_flash.o ABSOLUTE
+    ..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_fsmc.c 0x00000000   Number         0  stm32f10x_fsmc.o ABSOLUTE
+    ..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_gpio.c 0x00000000   Number         0  stm32f10x_gpio.o ABSOLUTE
+    ..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_i2c.c 0x00000000   Number         0  stm32f10x_i2c.o ABSOLUTE
+    ..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_iwdg.c 0x00000000   Number         0  stm32f10x_iwdg.o ABSOLUTE
+    ..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_pwr.c 0x00000000   Number         0  stm32f10x_pwr.o ABSOLUTE
+    ..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rcc.c 0x00000000   Number         0  stm32f10x_rcc.o ABSOLUTE
+    ..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rtc.c 0x00000000   Number         0  stm32f10x_rtc.o ABSOLUTE
+    ..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_sdio.c 0x00000000   Number         0  stm32f10x_sdio.o ABSOLUTE
+    ..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_spi.c 0x00000000   Number         0  stm32f10x_spi.o ABSOLUTE
+    ..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c 0x00000000   Number         0  stm32f10x_tim.o ABSOLUTE
+    ..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_usart.c 0x00000000   Number         0  stm32f10x_usart.o ABSOLUTE
+    ..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_wwdg.c 0x00000000   Number         0  stm32f10x_wwdg.o ABSOLUTE
+    ..\Libraries\STM32_ETH_Driver\src\stm32_eth.c 0x00000000   Number         0  stm32_eth.o ABSOLUTE
+    ..\USER\GLCD\AsciiLib.c                  0x00000000   Number         0  asciilib.o ABSOLUTE
+    ..\USER\GLCD\GLCD.c                      0x00000000   Number         0  glcd.o ABSOLUTE
+    ..\USER\GLCD\HzLib.c                     0x00000000   Number         0  hzlib.o ABSOLUTE
+    ..\USER\main.c                           0x00000000   Number         0  main.o ABSOLUTE
+    ..\USER\stm32f10x_it.c                   0x00000000   Number         0  stm32f10x_it.o ABSOLUTE
+    ..\USER\system_stm32f10x.c               0x00000000   Number         0  system_stm32f10x.o ABSOLUTE
+    ..\USER\uC-CPU\ARM-Cortex-M3\RealView\cpu_a.asm 0x00000000   Number         0  cpu_a.o ABSOLUTE
+    ..\USER\uC-CPU\ARM-Cortex-M3\RealView\cpu_c.c 0x00000000   Number         0  cpu_c.o ABSOLUTE
+    ..\USER\uC-LIB\Ports\RealView\lib_mem_a.asm 0x00000000   Number         0  lib_mem_a.o ABSOLUTE
+    ..\USER\uC-LIB\lib_mem.c                 0x00000000   Number         0  lib_mem.o ABSOLUTE
+    ..\USER\uC-LIB\lib_str.c                 0x00000000   Number         0  lib_str.o ABSOLUTE
+    ..\USER\uCOS-II\Ports\ARM-Cortex-M3\RealView\os_cpu_a.asm 0x00000000   Number         0  os_cpu_a.o ABSOLUTE
+    ..\USER\uCOS-II\Ports\ARM-Cortex-M3\RealView\os_cpu_c.c 0x00000000   Number         0  os_cpu_c.o ABSOLUTE
+    ..\USER\uCOS-II\Ports\ARM-Cortex-M3\RealView\os_dbg.c 0x00000000   Number         0  os_dbg.o ABSOLUTE
+    ..\USER\uCOS-II\Source\os_core.c         0x00000000   Number         0  os_core.o ABSOLUTE
+    ..\USER\uCOS-II\Source\os_flag.c         0x00000000   Number         0  os_flag.o ABSOLUTE
+    ..\USER\uCOS-II\Source\os_mbox.c         0x00000000   Number         0  os_mbox.o ABSOLUTE
+    ..\USER\uCOS-II\Source\os_mem.c          0x00000000   Number         0  os_mem.o ABSOLUTE
+    ..\USER\uCOS-II\Source\os_mutex.c        0x00000000   Number         0  os_mutex.o ABSOLUTE
+    ..\USER\uCOS-II\Source\os_q.c            0x00000000   Number         0  os_q.o ABSOLUTE
+    ..\USER\uCOS-II\Source\os_sem.c          0x00000000   Number         0  os_sem.o ABSOLUTE
+    ..\USER\uCOS-II\Source\os_task.c         0x00000000   Number         0  os_task.o ABSOLUTE
+    ..\USER\uCOS-II\Source\os_time.c         0x00000000   Number         0  os_time.o ABSOLUTE
+    ..\USER\uCOS-II\Source\os_tmr.c          0x00000000   Number         0  os_tmr.o ABSOLUTE
+    ..\USER\uCOS-VIEW\Ports\ARM-Cortex-M3\Realview\os_viewc.c 0x00000000   Number         0  os_viewc.o ABSOLUTE
+    ..\USER\uCOS-VIEW\Source\os_view.c       0x00000000   Number         0  os_view.o ABSOLUTE
+    ..\USER\ucCos_App\OS_AppHooks.c          0x00000000   Number         0  os_apphooks.o ABSOLUTE
+    ..\USER\ucCos_App\uctsk_OSView.c         0x00000000   Number         0  uctsk_osview.o ABSOLUTE
+    ..\\Libraries\\CMSIS\\CM3\\CoreSupport\\core_cm3.c 0x00000000   Number         0  core_cm3.o ABSOLUTE
+    dc.s                                     0x00000000   Number         0  dc.o ABSOLUTE
+    handlers.s                               0x00000000   Number         0  handlers.o ABSOLUTE
+    init.s                                   0x00000000   Number         0  init.o ABSOLUTE
+    RESET                                    0x08000000   Section      336  startup_stm32f10x_cl.o(RESET)
+    .ARM.Collect$$$$00000000                 0x08000150   Section        0  entry.o(.ARM.Collect$$$$00000000)
+    .ARM.Collect$$$$00000001                 0x08000150   Section        4  entry2.o(.ARM.Collect$$$$00000001)
+    .ARM.Collect$$$$00000004                 0x08000154   Section        4  entry5.o(.ARM.Collect$$$$00000004)
+    .ARM.Collect$$$$00000008                 0x08000158   Section        0  entry7b.o(.ARM.Collect$$$$00000008)
+    .ARM.Collect$$$$0000000A                 0x08000158   Section        0  entry8b.o(.ARM.Collect$$$$0000000A)
+    .ARM.Collect$$$$0000000B                 0x08000158   Section        8  entry9a.o(.ARM.Collect$$$$0000000B)
+    .ARM.Collect$$$$0000000D                 0x08000160   Section        0  entry10a.o(.ARM.Collect$$$$0000000D)
+    .ARM.Collect$$$$0000000F                 0x08000160   Section        0  entry11a.o(.ARM.Collect$$$$0000000F)
+    .ARM.Collect$$$$00002712                 0x08000160   Section        4  entry2.o(.ARM.Collect$$$$00002712)
+    __lit__00000000                          0x08000160   Data           4  entry2.o(.ARM.Collect$$$$00002712)
+    .text                                    0x08000164   Section       36  startup_stm32f10x_cl.o(.text)
+    .text                                    0x08000188   Section      164  os_cpu_a.o(.text)
+    .text                                    0x0800022c   Section       42  cpu_a.o(.text)
+    .text                                    0x08000258   Section       36  init.o(.text)
+    i.App_TCBInitHook                        0x0800027c   Section        0  os_apphooks.o(i.App_TCBInitHook)
+    i.App_TaskCreateHook                     0x0800027e   Section        0  os_apphooks.o(i.App_TaskCreateHook)
+    i.App_TaskIdleHook                       0x08000280   Section        0  os_apphooks.o(i.App_TaskIdleHook)
+    i.App_TaskStart                          0x08000282   Section        0  main.o(i.App_TaskStart)
+    App_TaskStart                            0x08000283   Thumb Code    22  main.o(i.App_TaskStart)
+    i.App_TaskStatHook                       0x08000298   Section        0  os_apphooks.o(i.App_TaskStatHook)
+    i.App_TaskSwHook                         0x0800029a   Section        0  os_apphooks.o(i.App_TaskSwHook)
+    i.App_TimeTickHook                       0x0800029c   Section        0  os_apphooks.o(i.App_TimeTickHook)
+    i.BusFault_Handler                       0x0800029e   Section        0  stm32f10x_it.o(i.BusFault_Handler)
+    i.DebugMon_Handler                       0x080002a0   Section        0  stm32f10x_it.o(i.DebugMon_Handler)
+    i.HardFault_Handler                      0x080002a2   Section        0  stm32f10x_it.o(i.HardFault_Handler)
+    i.MemManage_Handler                      0x080002a4   Section        0  stm32f10x_it.o(i.MemManage_Handler)
+    i.NMI_Handler                            0x080002a6   Section        0  stm32f10x_it.o(i.NMI_Handler)
+    i.OSDebugInit                            0x080002a8   Section        0  os_dbg.o(i.OSDebugInit)
+    i.OSEventNameSet                         0x080002ac   Section        0  os_core.o(i.OSEventNameSet)
+    i.OSInit                                 0x080002f8   Section        0  os_core.o(i.OSInit)
+    i.OSInitHookBegin                        0x080003e8   Section        0  os_cpu_c.o(i.OSInitHookBegin)
+    i.OSInitHookEnd                          0x080003f4   Section        0  os_cpu_c.o(i.OSInitHookEnd)
+    i.OSIntExit                              0x080003f8   Section        0  os_core.o(i.OSIntExit)
+    i.OSSchedLock                            0x08000454   Section        0  os_core.o(i.OSSchedLock)
+    i.OSSchedUnlock                          0x08000480   Section        0  os_core.o(i.OSSchedUnlock)
+    i.OSSemCreate                            0x080004bc   Section        0  os_sem.o(i.OSSemCreate)
+    i.OSSemPend                              0x08000508   Section        0  os_sem.o(i.OSSemPend)
+    i.OSSemPost                              0x080005c8   Section        0  os_sem.o(i.OSSemPost)
+    i.OSStart                                0x08000620   Section        0  os_core.o(i.OSStart)
+    i.OSStatInit                             0x08000650   Section        0  os_core.o(i.OSStatInit)
+    i.OSTCBInitHook                          0x08000684   Section        0  os_cpu_c.o(i.OSTCBInitHook)
+    i.OSTaskCreateExt                        0x08000688   Section        0  os_task.o(i.OSTaskCreateExt)
+    i.OSTaskCreateHook                       0x0800072c   Section        0  os_cpu_c.o(i.OSTaskCreateHook)
+    i.OSTaskIdleHook                         0x08000730   Section        0  os_cpu_c.o(i.OSTaskIdleHook)
+    i.OSTaskNameSet                          0x08000734   Section        0  os_task.o(i.OSTaskNameSet)
+    i.OSTaskStatHook                         0x080007a0   Section        0  os_cpu_c.o(i.OSTaskStatHook)
+    i.OSTaskStkChk                           0x080007a4   Section        0  os_task.o(i.OSTaskStkChk)
+    i.OSTaskStkInit                          0x0800082c   Section        0  os_cpu_c.o(i.OSTaskStkInit)
+    i.OSTaskSuspend                          0x08000890   Section        0  os_task.o(i.OSTaskSuspend)
+    i.OSTaskSwHook                           0x08000940   Section        0  os_cpu_c.o(i.OSTaskSwHook)
+    i.OSTimeDly                              0x08000944   Section        0  os_time.o(i.OSTimeDly)
+    i.OSTimeDlyHMSM                          0x080009b0   Section        0  os_time.o(i.OSTimeDlyHMSM)
+    i.OSTimeTick                             0x08000a24   Section        0  os_core.o(i.OSTimeTick)
+    i.OSTimeTickHook                         0x08000acc   Section        0  os_cpu_c.o(i.OSTimeTickHook)
+    i.OSTmrSignal                            0x08000af4   Section        0  os_tmr.o(i.OSTmrSignal)
+    i.OSTmr_Init                             0x08000b00   Section        0  os_tmr.o(i.OSTmr_Init)
+    i.OSTmr_Link                             0x08000c28   Section        0  os_tmr.o(i.OSTmr_Link)
+    OSTmr_Link                               0x08000c29   Thumb Code    64  os_tmr.o(i.OSTmr_Link)
+    i.OSTmr_Task                             0x08000c70   Section        0  os_tmr.o(i.OSTmr_Task)
+    OSTmr_Task                               0x08000c71   Thumb Code   106  os_tmr.o(i.OSTmr_Task)
+    i.OSTmr_Unlink                           0x08000ce8   Section        0  os_tmr.o(i.OSTmr_Unlink)
+    OSTmr_Unlink                             0x08000ce9   Thumb Code    58  os_tmr.o(i.OSTmr_Unlink)
+    i.OS_CPU_SysTickInit                     0x08000d28   Section        0  os_cpu_c.o(i.OS_CPU_SysTickInit)
+    i.OS_EventTaskRdy                        0x08000d64   Section        0  os_core.o(i.OS_EventTaskRdy)
+    i.OS_EventTaskRemove                     0x08000de0   Section        0  os_core.o(i.OS_EventTaskRemove)
+    i.OS_EventTaskRemoveMulti                0x08000e04   Section        0  os_core.o(i.OS_EventTaskRemoveMulti)
+    i.OS_EventTaskWait                       0x08000e34   Section        0  os_core.o(i.OS_EventTaskWait)
+    i.OS_EventWaitListInit                   0x08000e88   Section        0  os_core.o(i.OS_EventWaitListInit)
+    i.OS_FlagInit                            0x08000e9c   Section        0  os_flag.o(i.OS_FlagInit)
+    i.OS_InitEventList                       0x08000ee8   Section        0  os_core.o(i.OS_InitEventList)
+    OS_InitEventList                         0x08000ee9   Thumb Code    76  os_core.o(i.OS_InitEventList)
+    i.OS_InitTCBList                         0x08000f40   Section        0  os_core.o(i.OS_InitTCBList)
+    OS_InitTCBList                           0x08000f41   Thumb Code    94  os_core.o(i.OS_InitTCBList)
+    i.OS_MemClr                              0x08000fb0   Section        0  os_core.o(i.OS_MemClr)
+    i.OS_MemInit                             0x08000fc4   Section        0  os_mem.o(i.OS_MemInit)
+    i.OS_QInit                               0x08001010   Section        0  os_q.o(i.OS_QInit)
+    i.OS_Sched                               0x08001050   Section        0  os_core.o(i.OS_Sched)
+    i.OS_SchedNew                            0x08001098   Section        0  os_core.o(i.OS_SchedNew)
+    OS_SchedNew                              0x08001099   Thumb Code    24  os_core.o(i.OS_SchedNew)
+    i.OS_TCBInit                             0x080010b8   Section        0  os_core.o(i.OS_TCBInit)
+    i.OS_TaskIdle                            0x080011b4   Section        0  os_core.o(i.OS_TaskIdle)
+    i.OS_TaskStat                            0x080011d0   Section        0  os_core.o(i.OS_TaskStat)
+    i.OS_TaskStatStkChk                      0x08001228   Section        0  os_core.o(i.OS_TaskStatStkChk)
+    i.OS_TaskStkClr                          0x08001260   Section        0  os_task.o(i.OS_TaskStkClr)
+    i.SVC_Handler                            0x08001276   Section        0  stm32f10x_it.o(i.SVC_Handler)
+    i.SetSysClockTo72                        0x08001278   Section        0  system_stm32f10x.o(i.SetSysClockTo72)
+    SetSysClockTo72                          0x08001279   Thumb Code   166  system_stm32f10x.o(i.SetSysClockTo72)
+    i.SysTick_Handler                        0x08001330   Section        0  stm32f10x_it.o(i.SysTick_Handler)
+    i.SystemInit                             0x08001354   Section        0  system_stm32f10x.o(i.SystemInit)
+    i.USART1_IRQHandler                      0x080013b0   Section        0  stm32f10x_it.o(i.USART1_IRQHandler)
+    i.UsageFault_Handler                     0x080013b2   Section        0  stm32f10x_it.o(i.UsageFault_Handler)
+    i.__scatterload_copy                     0x080013b4   Section       14  handlers.o(i.__scatterload_copy)
+    i.__scatterload_null                     0x080013c2   Section        2  handlers.o(i.__scatterload_null)
+    i.__scatterload_zeroinit                 0x080013c4   Section       14  handlers.o(i.__scatterload_zeroinit)
+    i.main                                   0x080013d4   Section        0  main.o(i.main)
+    .constdata                               0x08001430   Section      256  os_core.o(.constdata)
+    .data                                    0x20000000   Section       20  system_stm32f10x.o(.data)
+    .data                                    0x20000014   Section        2  os_cpu_c.o(.data)
+    OSTmrCtr                                 0x20000014   Data           2  os_cpu_c.o(.data)
+    .data                                    0x20000018   Section       60  os_core.o(.data)
+    .data                                    0x20000054   Section        4  os_core.o(.data)
+    .data                                    0x20000058   Section        4  os_core.o(.data)
+    .data                                    0x2000005c   Section        4  os_core.o(.data)
+    .data                                    0x20000060   Section        2  os_core.o(.data)
+    .data                                    0x20000062   Section        2  os_core.o(.data)
+    .data                                    0x20000064   Section        4  os_core.o(.data)
+    .data                                    0x20000068   Section        4  os_core.o(.data)
+    .data                                    0x2000006c   Section        4  os_core.o(.data)
+    .data                                    0x20000070   Section        4  os_core.o(.data)
+    .bss                                     0x20000074   Section      256  main.o(.bss)
+    App_TaskStartStk                         0x20000074   Data         256  main.o(.bss)
+    .bss                                     0x20000174   Section     3056  os_core.o(.bss)
+    .bss                                     0x20000d64   Section       80  os_core.o(.bss)
+    .bss                                     0x20000db4   Section      120  os_core.o(.bss)
+    .bss                                     0x20000e2c   Section       96  os_core.o(.bss)
+    .bss                                     0x20000e8c   Section      640  os_core.o(.bss)
+    .bss                                     0x2000110c   Section      256  os_core.o(.bss)
+    .bss                                     0x2000120c   Section       64  os_core.o(.bss)
+    STACK                                    0x20001250   Section     2048  startup_stm32f10x_cl.o(STACK)
+
+    Global Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    BuildAttributes$$THM_ISAv4$P$D$K$B$S$PE$A:L22UL41UL21$X:L11$S22US41US21$IEEE1$IW$USESV6$~STKCKD$USESV7$~SHL$OSPACE$EBA8$MICROLIB$REQ8$PRES8$EABIv2 0x00000000   Number         0  anon$$obj.o ABSOLUTE
+    __ARM_use_no_argv                        0x00000000   Number         0  main.o ABSOLUTE
+    __cpp_initialize__aeabi_                  - Undefined Weak Reference
+    __cxa_finalize                            - Undefined Weak Reference
+    __decompress                              - Undefined Weak Reference
+    _clock_init                               - Undefined Weak Reference
+    _microlib_exit                            - Undefined Weak Reference
+    __Vectors_Size                           0x00000150   Number         0  startup_stm32f10x_cl.o ABSOLUTE
+    __Vectors                                0x08000000   Data           4  startup_stm32f10x_cl.o(RESET)
+    __Vectors_End                            0x08000150   Data           0  startup_stm32f10x_cl.o(RESET)
+    __main                                   0x08000151   Thumb Code     0  entry.o(.ARM.Collect$$$$00000000)
+    _main_stk                                0x08000151   Thumb Code     0  entry2.o(.ARM.Collect$$$$00000001)
+    _main_scatterload                        0x08000155   Thumb Code     0  entry5.o(.ARM.Collect$$$$00000004)
+    __main_after_scatterload                 0x08000159   Thumb Code     0  entry5.o(.ARM.Collect$$$$00000004)
+    _main_clock                              0x08000159   Thumb Code     0  entry7b.o(.ARM.Collect$$$$00000008)
+    _main_cpp_init                           0x08000159   Thumb Code     0  entry8b.o(.ARM.Collect$$$$0000000A)
+    _main_init                               0x08000159   Thumb Code     0  entry9a.o(.ARM.Collect$$$$0000000B)
+    __rt_final_cpp                           0x08000161   Thumb Code     0  entry10a.o(.ARM.Collect$$$$0000000D)
+    __rt_final_exit                          0x08000161   Thumb Code     0  entry11a.o(.ARM.Collect$$$$0000000F)
+    Reset_Handler                            0x08000165   Thumb Code     8  startup_stm32f10x_cl.o(.text)
+    ADC1_2_IRQHandler                        0x0800017f   Thumb Code     0  startup_stm32f10x_cl.o(.text)
+    CAN1_RX0_IRQHandler                      0x0800017f   Thumb Code     0  startup_stm32f10x_cl.o(.text)
+    CAN1_RX1_IRQHandler                      0x0800017f   Thumb Code     0  startup_stm32f10x_cl.o(.text)
+    CAN1_SCE_IRQHandler                      0x0800017f   Thumb Code     0  startup_stm32f10x_cl.o(.text)
+    CAN1_TX_IRQHandler                       0x0800017f   Thumb Code     0  startup_stm32f10x_cl.o(.text)
+    CAN2_RX0_IRQHandler                      0x0800017f   Thumb Code     0  startup_stm32f10x_cl.o(.text)
+    CAN2_RX1_IRQHandler                      0x0800017f   Thumb Code     0  startup_stm32f10x_cl.o(.text)
+    CAN2_SCE_IRQHandler                      0x0800017f   Thumb Code     0  startup_stm32f10x_cl.o(.text)
+    CAN2_TX_IRQHandler                       0x0800017f   Thumb Code     0  startup_stm32f10x_cl.o(.text)
+    DMA1_Channel1_IRQHandler                 0x0800017f   Thumb Code     0  startup_stm32f10x_cl.o(.text)
+    DMA1_Channel2_IRQHandler                 0x0800017f   Thumb Code     0  startup_stm32f10x_cl.o(.text)
+    DMA1_Channel3_IRQHandler                 0x0800017f   Thumb Code     0  startup_stm32f10x_cl.o(.text)
+    DMA1_Channel4_IRQHandler                 0x0800017f   Thumb Code     0  startup_stm32f10x_cl.o(.text)
+    DMA1_Channel5_IRQHandler                 0x0800017f   Thumb Code     0  startup_stm32f10x_cl.o(.text)
+    DMA1_Channel6_IRQHandler                 0x0800017f   Thumb Code     0  startup_stm32f10x_cl.o(.text)
+    DMA1_Channel7_IRQHandler                 0x0800017f   Thumb Code     0  startup_stm32f10x_cl.o(.text)
+    DMA2_Channel1_IRQHandler                 0x0800017f   Thumb Code     0  startup_stm32f10x_cl.o(.text)
+    DMA2_Channel2_IRQHandler                 0x0800017f   Thumb Code     0  startup_stm32f10x_cl.o(.text)
+    DMA2_Channel3_IRQHandler                 0x0800017f   Thumb Code     0  startup_stm32f10x_cl.o(.text)
+    DMA2_Channel4_IRQHandler                 0x0800017f   Thumb Code     0  startup_stm32f10x_cl.o(.text)
+    DMA2_Channel5_IRQHandler                 0x0800017f   Thumb Code     0  startup_stm32f10x_cl.o(.text)
+    ETH_IRQHandler                           0x0800017f   Thumb Code     0  startup_stm32f10x_cl.o(.text)
+    ETH_WKUP_IRQHandler                      0x0800017f   Thumb Code     0  startup_stm32f10x_cl.o(.text)
+    EXTI0_IRQHandler                         0x0800017f   Thumb Code     0  startup_stm32f10x_cl.o(.text)
+    EXTI15_10_IRQHandler                     0x0800017f   Thumb Code     0  startup_stm32f10x_cl.o(.text)
+    EXTI1_IRQHandler                         0x0800017f   Thumb Code     0  startup_stm32f10x_cl.o(.text)
+    EXTI2_IRQHandler                         0x0800017f   Thumb Code     0  startup_stm32f10x_cl.o(.text)
+    EXTI3_IRQHandler                         0x0800017f   Thumb Code     0  startup_stm32f10x_cl.o(.text)
+    EXTI4_IRQHandler                         0x0800017f   Thumb Code     0  startup_stm32f10x_cl.o(.text)
+    EXTI9_5_IRQHandler                       0x0800017f   Thumb Code     0  startup_stm32f10x_cl.o(.text)
+    FLASH_IRQHandler                         0x0800017f   Thumb Code     0  startup_stm32f10x_cl.o(.text)
+    I2C1_ER_IRQHandler                       0x0800017f   Thumb Code     0  startup_stm32f10x_cl.o(.text)
+    I2C1_EV_IRQHandler                       0x0800017f   Thumb Code     0  startup_stm32f10x_cl.o(.text)
+    I2C2_ER_IRQHandler                       0x0800017f   Thumb Code     0  startup_stm32f10x_cl.o(.text)
+    I2C2_EV_IRQHandler                       0x0800017f   Thumb Code     0  startup_stm32f10x_cl.o(.text)
+    OTG_FS_IRQHandler                        0x0800017f   Thumb Code     0  startup_stm32f10x_cl.o(.text)
+    OTG_FS_WKUP_IRQHandler                   0x0800017f   Thumb Code     0  startup_stm32f10x_cl.o(.text)
+    PVD_IRQHandler                           0x0800017f   Thumb Code     0  startup_stm32f10x_cl.o(.text)
+    RCC_IRQHandler                           0x0800017f   Thumb Code     0  startup_stm32f10x_cl.o(.text)
+    RTCAlarm_IRQHandler                      0x0800017f   Thumb Code     0  startup_stm32f10x_cl.o(.text)
+    RTC_IRQHandler                           0x0800017f   Thumb Code     0  startup_stm32f10x_cl.o(.text)
+    SPI1_IRQHandler                          0x0800017f   Thumb Code     0  startup_stm32f10x_cl.o(.text)
+    SPI2_IRQHandler                          0x0800017f   Thumb Code     0  startup_stm32f10x_cl.o(.text)
+    SPI3_IRQHandler                          0x0800017f   Thumb Code     0  startup_stm32f10x_cl.o(.text)
+    TAMPER_IRQHandler                        0x0800017f   Thumb Code     0  startup_stm32f10x_cl.o(.text)
+    TIM1_BRK_IRQHandler                      0x0800017f   Thumb Code     0  startup_stm32f10x_cl.o(.text)
+    TIM1_CC_IRQHandler                       0x0800017f   Thumb Code     0  startup_stm32f10x_cl.o(.text)
+    TIM1_TRG_COM_IRQHandler                  0x0800017f   Thumb Code     0  startup_stm32f10x_cl.o(.text)
+    TIM1_UP_IRQHandler                       0x0800017f   Thumb Code     0  startup_stm32f10x_cl.o(.text)
+    TIM2_IRQHandler                          0x0800017f   Thumb Code     0  startup_stm32f10x_cl.o(.text)
+    TIM3_IRQHandler                          0x0800017f   Thumb Code     0  startup_stm32f10x_cl.o(.text)
+    TIM4_IRQHandler                          0x0800017f   Thumb Code     0  startup_stm32f10x_cl.o(.text)
+    TIM5_IRQHandler                          0x0800017f   Thumb Code     0  startup_stm32f10x_cl.o(.text)
+    TIM6_IRQHandler                          0x0800017f   Thumb Code     0  startup_stm32f10x_cl.o(.text)
+    TIM7_IRQHandler                          0x0800017f   Thumb Code     0  startup_stm32f10x_cl.o(.text)
+    UART4_IRQHandler                         0x0800017f   Thumb Code     0  startup_stm32f10x_cl.o(.text)
+    UART5_IRQHandler                         0x0800017f   Thumb Code     0  startup_stm32f10x_cl.o(.text)
+    USART2_IRQHandler                        0x0800017f   Thumb Code     0  startup_stm32f10x_cl.o(.text)
+    USART3_IRQHandler                        0x0800017f   Thumb Code     0  startup_stm32f10x_cl.o(.text)
+    WWDG_IRQHandler                          0x0800017f   Thumb Code     0  startup_stm32f10x_cl.o(.text)
+    OS_CPU_SR_Save                           0x08000189   Thumb Code     0  os_cpu_a.o(.text)
+    OS_CPU_SR_Restore                        0x08000191   Thumb Code     0  os_cpu_a.o(.text)
+    OSStartHighRdy                           0x08000197   Thumb Code     0  os_cpu_a.o(.text)
+    OSCtxSw                                  0x080001b7   Thumb Code     0  os_cpu_a.o(.text)
+    OSIntCtxSw                               0x080001c1   Thumb Code     0  os_cpu_a.o(.text)
+    PendSV_Handler                           0x080001cb   Thumb Code     0  os_cpu_a.o(.text)
+    CPU_IntDis                               0x0800022d   Thumb Code     0  cpu_a.o(.text)
+    CPU_IntEn                                0x08000231   Thumb Code     0  cpu_a.o(.text)
+    CPU_SR_Save                              0x08000235   Thumb Code     0  cpu_a.o(.text)
+    CPU_SR_Restore                           0x0800023d   Thumb Code     0  cpu_a.o(.text)
+    CPU_CntLeadZeros                         0x08000243   Thumb Code     0  cpu_a.o(.text)
+    CPU_RevBits                              0x08000249   Thumb Code     0  cpu_a.o(.text)
+    CPU_WaitForInt                           0x0800024f   Thumb Code     0  cpu_a.o(.text)
+    CPU_WaitForExcept                        0x08000253   Thumb Code     0  cpu_a.o(.text)
+    __scatterload                            0x08000259   Thumb Code    28  init.o(.text)
+    __scatterload_rt2                        0x08000259   Thumb Code     0  init.o(.text)
+    App_TCBInitHook                          0x0800027d   Thumb Code     2  os_apphooks.o(i.App_TCBInitHook)
+    App_TaskCreateHook                       0x0800027f   Thumb Code     2  os_apphooks.o(i.App_TaskCreateHook)
+    App_TaskIdleHook                         0x08000281   Thumb Code     2  os_apphooks.o(i.App_TaskIdleHook)
+    App_TaskStatHook                         0x08000299   Thumb Code     2  os_apphooks.o(i.App_TaskStatHook)
+    App_TaskSwHook                           0x0800029b   Thumb Code     2  os_apphooks.o(i.App_TaskSwHook)
+    App_TimeTickHook                         0x0800029d   Thumb Code     2  os_apphooks.o(i.App_TimeTickHook)
+    BusFault_Handler                         0x0800029f   Thumb Code     2  stm32f10x_it.o(i.BusFault_Handler)
+    DebugMon_Handler                         0x080002a1   Thumb Code     2  stm32f10x_it.o(i.DebugMon_Handler)
+    HardFault_Handler                        0x080002a3   Thumb Code     2  stm32f10x_it.o(i.HardFault_Handler)
+    MemManage_Handler                        0x080002a5   Thumb Code     2  stm32f10x_it.o(i.MemManage_Handler)
+    NMI_Handler                              0x080002a7   Thumb Code     2  stm32f10x_it.o(i.NMI_Handler)
+    OSDebugInit                              0x080002a9   Thumb Code     2  os_dbg.o(i.OSDebugInit)
+    OSEventNameSet                           0x080002ad   Thumb Code    70  os_core.o(i.OSEventNameSet)
+    OSInit                                   0x080002f9   Thumb Code   188  os_core.o(i.OSInit)
+    OSInitHookBegin                          0x080003e9   Thumb Code     8  os_cpu_c.o(i.OSInitHookBegin)
+    OSInitHookEnd                            0x080003f5   Thumb Code     2  os_cpu_c.o(i.OSInitHookEnd)
+    OSIntExit                                0x080003f9   Thumb Code    82  os_core.o(i.OSIntExit)
+    OSSchedLock                              0x08000455   Thumb Code    38  os_core.o(i.OSSchedLock)
+    OSSchedUnlock                            0x08000481   Thumb Code    54  os_core.o(i.OSSchedUnlock)
+    OSSemCreate                              0x080004bd   Thumb Code    62  os_sem.o(i.OSSemCreate)
+    OSSemPend                                0x08000509   Thumb Code   180  os_sem.o(i.OSSemPend)
+    OSSemPost                                0x080005c9   Thumb Code    88  os_sem.o(i.OSSemPost)
+    OSStart                                  0x08000621   Thumb Code    38  os_core.o(i.OSStart)
+    OSStatInit                               0x08000651   Thumb Code    48  os_core.o(i.OSStatInit)
+    OSTCBInitHook                            0x08000685   Thumb Code     4  os_cpu_c.o(i.OSTCBInitHook)
+    OSTaskCreateExt                          0x08000689   Thumb Code   150  os_task.o(i.OSTaskCreateExt)
+    OSTaskCreateHook                         0x0800072d   Thumb Code     4  os_cpu_c.o(i.OSTaskCreateHook)
+    OSTaskIdleHook                           0x08000731   Thumb Code     4  os_cpu_c.o(i.OSTaskIdleHook)
+    OSTaskNameSet                            0x08000735   Thumb Code    94  os_task.o(i.OSTaskNameSet)
+    OSTaskStatHook                           0x080007a1   Thumb Code     4  os_cpu_c.o(i.OSTaskStatHook)
+    OSTaskStkChk                             0x080007a5   Thumb Code   128  os_task.o(i.OSTaskStkChk)
+    OSTaskStkInit                            0x0800082d   Thumb Code   100  os_cpu_c.o(i.OSTaskStkInit)
+    OSTaskSuspend                            0x08000891   Thumb Code   160  os_task.o(i.OSTaskSuspend)
+    OSTaskSwHook                             0x08000941   Thumb Code     4  os_cpu_c.o(i.OSTaskSwHook)
+    OSTimeDly                                0x08000945   Thumb Code    88  os_time.o(i.OSTimeDly)
+    OSTimeDlyHMSM                            0x080009b1   Thumb Code   108  os_time.o(i.OSTimeDlyHMSM)
+    OSTimeTick                               0x08000a25   Thumb Code   164  os_core.o(i.OSTimeTick)
+    OSTimeTickHook                           0x08000acd   Thumb Code    34  os_cpu_c.o(i.OSTimeTickHook)
+    OSTmrSignal                              0x08000af5   Thumb Code     8  os_tmr.o(i.OSTmrSignal)
+    OSTmr_Init                               0x08000b01   Thumb Code   194  os_tmr.o(i.OSTmr_Init)
+    OS_CPU_SysTickInit                       0x08000d29   Thumb Code    50  os_cpu_c.o(i.OS_CPU_SysTickInit)
+    OS_EventTaskRdy                          0x08000d65   Thumb Code   110  os_core.o(i.OS_EventTaskRdy)
+    OS_EventTaskRemove                       0x08000de1   Thumb Code    36  os_core.o(i.OS_EventTaskRemove)
+    OS_EventTaskRemoveMulti                  0x08000e05   Thumb Code    48  os_core.o(i.OS_EventTaskRemoveMulti)
+    OS_EventTaskWait                         0x08000e35   Thumb Code    80  os_core.o(i.OS_EventTaskWait)
+    OS_EventWaitListInit                     0x08000e89   Thumb Code    20  os_core.o(i.OS_EventWaitListInit)
+    OS_FlagInit                              0x08000e9d   Thumb Code    62  os_flag.o(i.OS_FlagInit)
+    OS_MemClr                                0x08000fb1   Thumb Code    18  os_core.o(i.OS_MemClr)
+    OS_MemInit                               0x08000fc5   Thumb Code    64  os_mem.o(i.OS_MemInit)
+    OS_QInit                                 0x08001011   Thumb Code    56  os_q.o(i.OS_QInit)
+    OS_Sched                                 0x08001051   Thumb Code    64  os_core.o(i.OS_Sched)
+    OS_TCBInit                               0x080010b9   Thumb Code   238  os_core.o(i.OS_TCBInit)
+    OS_TaskIdle                              0x080011b5   Thumb Code    24  os_core.o(i.OS_TaskIdle)
+    OS_TaskStat                              0x080011d1   Thumb Code    82  os_core.o(i.OS_TaskStat)
+    OS_TaskStatStkChk                        0x08001229   Thumb Code    50  os_core.o(i.OS_TaskStatStkChk)
+    OS_TaskStkClr                            0x08001261   Thumb Code    22  os_task.o(i.OS_TaskStkClr)
+    SVC_Handler                              0x08001277   Thumb Code     2  stm32f10x_it.o(i.SVC_Handler)
+    SysTick_Handler                          0x08001331   Thumb Code    30  stm32f10x_it.o(i.SysTick_Handler)
+    SystemInit                               0x08001355   Thumb Code    76  system_stm32f10x.o(i.SystemInit)
+    USART1_IRQHandler                        0x080013b1   Thumb Code     2  stm32f10x_it.o(i.USART1_IRQHandler)
+    UsageFault_Handler                       0x080013b3   Thumb Code     2  stm32f10x_it.o(i.UsageFault_Handler)
+    __scatterload_copy                       0x080013b5   Thumb Code    14  handlers.o(i.__scatterload_copy)
+    __scatterload_null                       0x080013c3   Thumb Code     2  handlers.o(i.__scatterload_null)
+    __scatterload_zeroinit                   0x080013c5   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
+    main                                     0x080013d5   Thumb Code    70  main.o(i.main)
+    OSUnMapTbl                               0x08001430   Data         256  os_core.o(.constdata)
+    Region$$Table$$Base                      0x08001530   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x08001550   Number         0  anon$$obj.o(Region$$Table)
+    SystemCoreClock                          0x20000000   Data           4  system_stm32f10x.o(.data)
+    AHBPrescTable                            0x20000004   Data          16  system_stm32f10x.o(.data)
+    OSCPUUsage                               0x20000018   Data           1  os_core.o(.data)
+    OSStatRdy                                0x20000019   Data           1  os_core.o(.data)
+    OSIntNesting                             0x2000001a   Data           1  os_core.o(.data)
+    OSLockNesting                            0x2000001b   Data           1  os_core.o(.data)
+    OSPrioCur                                0x2000001c   Data           1  os_core.o(.data)
+    OSPrioHighRdy                            0x2000001d   Data           1  os_core.o(.data)
+    OSRdyGrp                                 0x2000001e   Data           1  os_core.o(.data)
+    OSRunning                                0x2000001f   Data           1  os_core.o(.data)
+    OSTaskCtr                                0x20000020   Data           1  os_core.o(.data)
+    OSTickStepState                          0x20000021   Data           1  os_core.o(.data)
+    OSCtxSwCtr                               0x20000024   Data           4  os_core.o(.data)
+    OSEventFreeList                          0x20000028   Data           4  os_core.o(.data)
+    OSIdleCtrMax                             0x2000002c   Data           4  os_core.o(.data)
+    OSIdleCtrRun                             0x20000030   Data           4  os_core.o(.data)
+    OSIdleCtr                                0x20000034   Data           4  os_core.o(.data)
+    OSTCBCur                                 0x20000038   Data           4  os_core.o(.data)
+    OSTCBFreeList                            0x2000003c   Data           4  os_core.o(.data)
+    OSTCBHighRdy                             0x20000040   Data           4  os_core.o(.data)
+    OSTCBList                                0x20000044   Data           4  os_core.o(.data)
+    OSTime                                   0x20000048   Data           4  os_core.o(.data)
+    OSRdyTbl                                 0x2000004c   Data           8  os_core.o(.data)
+    OSFlagFreeList                           0x20000054   Data           4  os_core.o(.data)
+    OSMemFreeList                            0x20000058   Data           4  os_core.o(.data)
+    OSQFreeList                              0x2000005c   Data           4  os_core.o(.data)
+    OSTmrFree                                0x20000060   Data           2  os_core.o(.data)
+    OSTmrUsed                                0x20000062   Data           2  os_core.o(.data)
+    OSTmrTime                                0x20000064   Data           4  os_core.o(.data)
+    OSTmrSem                                 0x20000068   Data           4  os_core.o(.data)
+    OSTmrSemSignal                           0x2000006c   Data           4  os_core.o(.data)
+    OSTmrFreeList                            0x20000070   Data           4  os_core.o(.data)
+    OSEventTbl                               0x20000174   Data         480  os_core.o(.bss)
+    OSTaskStatStk                            0x20000354   Data         256  os_core.o(.bss)
+    OSTaskIdleStk                            0x20000454   Data         128  os_core.o(.bss)
+    OSTCBPrioTbl                             0x200004d4   Data         256  os_core.o(.bss)
+    OSTCBTbl                                 0x200005d4   Data        1936  os_core.o(.bss)
+    OSFlagTbl                                0x20000d64   Data          80  os_core.o(.bss)
+    OSMemTbl                                 0x20000db4   Data         120  os_core.o(.bss)
+    OSQTbl                                   0x20000e2c   Data          96  os_core.o(.bss)
+    OSTmrTbl                                 0x20000e8c   Data         640  os_core.o(.bss)
+    OSTmrTaskStk                             0x2000110c   Data         256  os_core.o(.bss)
+    OSTmrWheelTbl                            0x2000120c   Data          64  os_core.o(.bss)
+    __initial_sp                             0x20001a50   Data           0  startup_stm32f10x_cl.o(STACK)
+
+
+
+==============================================================================
+
+Memory Map of the image
+
+  Image Entry point : 0x08000151
+
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x000015c4, Max: 0x00040000, ABSOLUTE)
+
+    Execution Region ER_IROM1 (Base: 0x08000000, Size: 0x00001550, Max: 0x00040000, ABSOLUTE)
+
+    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x08000000   0x00000150   Data   RO         4110    RESET               startup_stm32f10x_cl.o
+    0x08000150   0x00000000   Code   RO         5246  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
+    0x08000150   0x00000004   Code   RO         5253    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
+    0x08000154   0x00000004   Code   RO         5256    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
+    0x08000158   0x00000000   Code   RO         5258    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
+    0x08000158   0x00000000   Code   RO         5260    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
+    0x08000158   0x00000008   Code   RO         5261    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
+    0x08000160   0x00000000   Code   RO         5263    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
+    0x08000160   0x00000000   Code   RO         5265    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
+    0x08000160   0x00000004   Code   RO         5254    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
+    0x08000164   0x00000024   Code   RO         4111    .text               startup_stm32f10x_cl.o
+    0x08000188   0x000000a4   Code   RO         4234    .text               os_cpu_a.o
+    0x0800022c   0x0000002a   Code   RO         5113    .text               cpu_a.o
+    0x08000256   0x00000002   PAD
+    0x08000258   0x00000024   Code   RO         5267    .text               mc_w.l(init.o)
+    0x0800027c   0x00000002   Code   RO         5011    i.App_TCBInitHook   os_apphooks.o
+    0x0800027e   0x00000002   Code   RO         5012    i.App_TaskCreateHook  os_apphooks.o
+    0x08000280   0x00000002   Code   RO         5014    i.App_TaskIdleHook  os_apphooks.o
+    0x08000282   0x00000016   Code   RO            1    i.App_TaskStart     main.o
+    0x08000298   0x00000002   Code   RO         5016    i.App_TaskStatHook  os_apphooks.o
+    0x0800029a   0x00000002   Code   RO         5017    i.App_TaskSwHook    os_apphooks.o
+    0x0800029c   0x00000002   Code   RO         5018    i.App_TimeTickHook  os_apphooks.o
+    0x0800029e   0x00000002   Code   RO          124    i.BusFault_Handler  stm32f10x_it.o
+    0x080002a0   0x00000002   Code   RO          125    i.DebugMon_Handler  stm32f10x_it.o
+    0x080002a2   0x00000002   Code   RO          126    i.HardFault_Handler  stm32f10x_it.o
+    0x080002a4   0x00000002   Code   RO          127    i.MemManage_Handler  stm32f10x_it.o
+    0x080002a6   0x00000002   Code   RO          128    i.NMI_Handler       stm32f10x_it.o
+    0x080002a8   0x00000002   Code   RO         4115    i.OSDebugInit       os_dbg.o
+    0x080002aa   0x00000002   PAD
+    0x080002ac   0x0000004c   Code   RO         4238    i.OSEventNameSet    os_core.o
+    0x080002f8   0x000000f0   Code   RO         4240    i.OSInit            os_core.o
+    0x080003e8   0x0000000c   Code   RO         4137    i.OSInitHookBegin   os_cpu_c.o
+    0x080003f4   0x00000002   Code   RO         4138    i.OSInitHookEnd     os_cpu_c.o
+    0x080003f6   0x00000002   PAD
+    0x080003f8   0x0000005c   Code   RO         4242    i.OSIntExit         os_core.o
+    0x08000454   0x0000002c   Code   RO         4243    i.OSSchedLock       os_core.o
+    0x08000480   0x0000003c   Code   RO         4244    i.OSSchedUnlock     os_core.o
+    0x080004bc   0x0000004c   Code   RO         4746    i.OSSemCreate       os_sem.o
+    0x08000508   0x000000c0   Code   RO         4748    i.OSSemPend         os_sem.o
+    0x080005c8   0x00000058   Code   RO         4750    i.OSSemPost         os_sem.o
+    0x08000620   0x00000030   Code   RO         4245    i.OSStart           os_core.o
+    0x08000650   0x00000034   Code   RO         4246    i.OSStatInit        os_core.o
+    0x08000684   0x00000004   Code   RO         4139    i.OSTCBInitHook     os_cpu_c.o
+    0x08000688   0x000000a4   Code   RO         4801    i.OSTaskCreateExt   os_task.o
+    0x0800072c   0x00000004   Code   RO         4140    i.OSTaskCreateHook  os_cpu_c.o
+    0x08000730   0x00000004   Code   RO         4142    i.OSTaskIdleHook    os_cpu_c.o
+    0x08000734   0x0000006c   Code   RO         4805    i.OSTaskNameSet     os_task.o
+    0x080007a0   0x00000004   Code   RO         4143    i.OSTaskStatHook    os_cpu_c.o
+    0x080007a4   0x00000088   Code   RO         4810    i.OSTaskStkChk      os_task.o
+    0x0800082c   0x00000064   Code   RO         4144    i.OSTaskStkInit     os_cpu_c.o
+    0x08000890   0x000000b0   Code   RO         4811    i.OSTaskSuspend     os_task.o
+    0x08000940   0x00000004   Code   RO         4145    i.OSTaskSwHook      os_cpu_c.o
+    0x08000944   0x0000006c   Code   RO         4895    i.OSTimeDly         os_time.o
+    0x080009b0   0x00000074   Code   RO         4896    i.OSTimeDlyHMSM     os_time.o
+    0x08000a24   0x000000a8   Code   RO         4247    i.OSTimeTick        os_core.o
+    0x08000acc   0x00000028   Code   RO         4146    i.OSTimeTickHook    os_cpu_c.o
+    0x08000af4   0x0000000c   Code   RO         4935    i.OSTmrSignal       os_tmr.o
+    0x08000b00   0x00000128   Code   RO         4940    i.OSTmr_Init        os_tmr.o
+    0x08000c28   0x00000048   Code   RO         4941    i.OSTmr_Link        os_tmr.o
+    0x08000c70   0x00000078   Code   RO         4942    i.OSTmr_Task        os_tmr.o
+    0x08000ce8   0x00000040   Code   RO         4943    i.OSTmr_Unlink      os_tmr.o
+    0x08000d28   0x0000003c   Code   RO         4149    i.OS_CPU_SysTickInit  os_cpu_c.o
+    0x08000d64   0x0000007c   Code   RO         4250    i.OS_EventTaskRdy   os_core.o
+    0x08000de0   0x00000024   Code   RO         4251    i.OS_EventTaskRemove  os_core.o
+    0x08000e04   0x00000030   Code   RO         4252    i.OS_EventTaskRemoveMulti  os_core.o
+    0x08000e34   0x00000054   Code   RO         4253    i.OS_EventTaskWait  os_core.o
+    0x08000e88   0x00000014   Code   RO         4255    i.OS_EventWaitListInit  os_core.o
+    0x08000e9c   0x0000004c   Code   RO         4452    i.OS_FlagInit       os_flag.o
+    0x08000ee8   0x00000058   Code   RO         4256    i.OS_InitEventList  os_core.o
+    0x08000f40   0x00000070   Code   RO         4257    i.OS_InitTCBList    os_core.o
+    0x08000fb0   0x00000012   Code   RO         4258    i.OS_MemClr         os_core.o
+    0x08000fc2   0x00000002   PAD
+    0x08000fc4   0x0000004c   Code   RO         4584    i.OS_MemInit        os_mem.o
+    0x08001010   0x00000040   Code   RO         4683    i.OS_QInit          os_q.o
+    0x08001050   0x00000048   Code   RO         4260    i.OS_Sched          os_core.o
+    0x08001098   0x00000020   Code   RO         4261    i.OS_SchedNew       os_core.o
+    0x080010b8   0x000000fc   Code   RO         4263    i.OS_TCBInit        os_core.o
+    0x080011b4   0x0000001c   Code   RO         4264    i.OS_TaskIdle       os_core.o
+    0x080011d0   0x00000058   Code   RO         4265    i.OS_TaskStat       os_core.o
+    0x08001228   0x00000038   Code   RO         4266    i.OS_TaskStatStkChk  os_core.o
+    0x08001260   0x00000016   Code   RO         4813    i.OS_TaskStkClr     os_task.o
+    0x08001276   0x00000002   Code   RO          129    i.SVC_Handler       stm32f10x_it.o
+    0x08001278   0x000000b8   Code   RO         4079    i.SetSysClockTo72   system_stm32f10x.o
+    0x08001330   0x00000024   Code   RO          130    i.SysTick_Handler   stm32f10x_it.o
+    0x08001354   0x0000005c   Code   RO         4081    i.SystemInit        system_stm32f10x.o
+    0x080013b0   0x00000002   Code   RO          131    i.USART1_IRQHandler  stm32f10x_it.o
+    0x080013b2   0x00000002   Code   RO          132    i.UsageFault_Handler  stm32f10x_it.o
+    0x080013b4   0x0000000e   Code   RO         5271    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x080013c2   0x00000002   Code   RO         5272    i.__scatterload_null  mc_w.l(handlers.o)
+    0x080013c4   0x0000000e   Code   RO         5273    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x080013d2   0x00000002   PAD
+    0x080013d4   0x0000005c   Code   RO            2    i.main              main.o
+    0x08001430   0x00000100   Data   RO         4274    .constdata          os_core.o
+    0x08001530   0x00000020   Data   RO         5269    Region$$Table       anon$$obj.o
+
+
+    Execution Region RW_IRAM1 (Base: 0x20000000, Size: 0x00001a50, Max: 0x00010000, ABSOLUTE)
+
+    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x20000000   0x00000014   Data   RW         4082    .data               system_stm32f10x.o
+    0x20000014   0x00000002   Data   RW         4150    .data               os_cpu_c.o
+    0x20000016   0x00000002   PAD
+    0x20000018   0x0000003c   Data   RW         4275    .data               os_core.o
+    0x20000054   0x00000004   Data   RW         4276    .data               os_core.o
+    0x20000058   0x00000004   Data   RW         4277    .data               os_core.o
+    0x2000005c   0x00000004   Data   RW         4278    .data               os_core.o
+    0x20000060   0x00000002   Data   RW         4279    .data               os_core.o
+    0x20000062   0x00000002   Data   RW         4280    .data               os_core.o
+    0x20000064   0x00000004   Data   RW         4281    .data               os_core.o
+    0x20000068   0x00000004   Data   RW         4282    .data               os_core.o
+    0x2000006c   0x00000004   Data   RW         4283    .data               os_core.o
+    0x20000070   0x00000004   Data   RW         4284    .data               os_core.o
+    0x20000074   0x00000100   Zero   RW            3    .bss                main.o
+    0x20000174   0x00000bf0   Zero   RW         4267    .bss                os_core.o
+    0x20000d64   0x00000050   Zero   RW         4268    .bss                os_core.o
+    0x20000db4   0x00000078   Zero   RW         4269    .bss                os_core.o
+    0x20000e2c   0x00000060   Zero   RW         4270    .bss                os_core.o
+    0x20000e8c   0x00000280   Zero   RW         4271    .bss                os_core.o
+    0x2000110c   0x00000100   Zero   RW         4272    .bss                os_core.o
+    0x2000120c   0x00000040   Zero   RW         4273    .bss                os_core.o
+    0x2000124c   0x00000004   PAD
+    0x20001250   0x00000800   Zero   RW         4108    STACK               startup_stm32f10x_cl.o
+
+
+==============================================================================
+
+Image component sizes
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
+
+         0          0          0          0          0         32   core_cm3.o
+        42          0          0          0          0        328   cpu_a.o
+       114         22          0          0        256      10971   main.o
+        12          0          0          0          0       2849   os_apphooks.o
+      1838        192        256         92       4312      23944   os_core.o
+       164         32          0          0          0        384   os_cpu_a.o
+       234         20          0          2          0      31306   os_cpu_c.o
+         2          0          0          0          0        522   os_dbg.o
+        76         14          0          0          0        626   os_flag.o
+        76         12          0          0          0        577   os_mem.o
+        64          8          0          0          0        631   os_q.o
+       356         26          0          0          0       2642   os_sem.o
+       606         52          0          0          0       4853   os_task.o
+       224         28          0          0          0       1568   os_time.o
+       564        134          0          0          0       3815   os_tmr.o
+        36          8        336          0       2048        896   startup_stm32f10x_cl.o
+        52          6          0          0          0     243472   stm32f10x_it.o
+       276         34          0         20          0       1933   system_stm32f10x.o
+
+    ----------------------------------------------------------------------
+      4744        588        624        116       6620     331349   Object Totals
+         0          0         32          0          0          0   (incl. Generated)
+         8          0          0          2          4          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Member Name
+
+         0          0          0          0          0          0   entry.o
+         0          0          0          0          0          0   entry10a.o
+         0          0          0          0          0          0   entry11a.o
+         8          4          0          0          0          0   entry2.o
+         4          0          0          0          0          0   entry5.o
+         0          0          0          0          0          0   entry7b.o
+         0          0          0          0          0          0   entry8b.o
+         8          4          0          0          0          0   entry9a.o
+        30          0          0          0          0          0   handlers.o
+        36          8          0          0          0         68   init.o
+
+    ----------------------------------------------------------------------
+        88         16          0          0          0         68   Library Totals
+         2          0          0          0          0          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Name
+
+        86         16          0          0          0         68   mc_w.l
+
+    ----------------------------------------------------------------------
+        88         16          0          0          0         68   Library Totals
+
+    ----------------------------------------------------------------------
+
+==============================================================================
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
+
+      4832        604        624        116       6620     328037   Grand Totals
+      4832        604        624        116       6620     328037   ELF Image Totals
+      4832        604        624        116          0          0   ROM Totals
+
+==============================================================================
+
+    Total RO  Size (Code + RO Data)                 5456 (   5.33kB)
+    Total RW  Size (RW Data + ZI Data)              6736 (   6.58kB)
+    Total ROM Size (Code + RO Data + RW Data)       5572 (   5.44kB)
+
+==============================================================================
+
